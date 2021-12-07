@@ -8,8 +8,8 @@ Created on Tue Nov 23 14:58:19 2021
 #Import the libraries
 import pandas as pd
 #from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+#from sklearn.model_selection import train_test_split
+#from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 import streamlit as st 
 import matplotlib.pyplot as plt
