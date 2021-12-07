@@ -47,7 +47,7 @@ if app_model == 'Load demand':
     col1.caption(f"{app_model}")
     @st.cache
     def load_data(nrows):
-        data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Base%20load.csv', nrows=nrows)
+        #data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Base%20load.csv', nrows=nrows)
         return data
     load_demand = load_data(365)
     col1.line_chart(load_demand)
@@ -57,7 +57,7 @@ elif app_model == 'Solar irradiance':
     col1.caption(f"{app_model}")
     @st.cache
     def solar_irradiance(nrows):
-        data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
+        #data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
         return data
     solar_data = solar_irradiance(8760)
     col1.line_chart(solar_data)
@@ -65,7 +65,7 @@ elif app_model == 'Capacity':
     col1.caption(f"{app_model}")
     @st.cache
     def output_capacity(nrows):
-        data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Capacity.csv', nrows=nrows)
+        #data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Capacity.csv', nrows=nrows)
         return data
     capacity_data = output_capacity(8760)
     #st.line_chart(capacity_data)
@@ -93,13 +93,13 @@ user_input = get_user_input()
 
 @st.cache
 def load_data(nrows):
-     data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Discharging%20ESS.csv', nrows=nrows)
+     #data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Discharging%20ESS.csv', nrows=nrows)
      return data
 weekly_data = load_data(96)
 df_1 = pd.DataFrame(weekly_data[:96],columns = ['ESS1','ESS2'])
 @st.cache
 def load_center_data(nrows):
-    data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Discharging%20CHP.csv',nrows=nrows)
+    #data = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Discharging%20CHP.csv',nrows=nrows)
     return data
 center_info_data = load_center_data(96)  
 df_2 = pd.DataFrame(center_info_data[:96], columns = ['CHP1','CHP2'])   
