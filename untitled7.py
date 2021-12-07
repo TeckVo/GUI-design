@@ -24,7 +24,7 @@ st.write("""
          """)
          
 #Open and display an image 
-image = Image.open('https://github.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png')
+image = Image.open("github.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png")
 st.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
 
 df = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Data.csv')
