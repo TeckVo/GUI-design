@@ -11,6 +11,8 @@ import pandas as pd
 #from sklearn.model_selection import train_test_split
 #from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
+import requests
+from io import BytesIO
 import streamlit as st 
 #import matplotlib.pyplot as plt
 import numpy as np
@@ -24,7 +26,10 @@ st.write("""
          """)
          
 #Open and display an image 
-image = Image.open('https://github.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png')
+url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png'
+response = requests.get(url)
+image = Image.open(BytestIO(response.content))
+#image = Image.open('https://github.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png')
 st.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
 
 df = pd.read_csv('https://github.com/TeckVo/GUI-design/blob/main/Data_set/Data.csv')
