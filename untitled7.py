@@ -26,7 +26,7 @@ st.write("""
          """)
          
 #Open and display an image 
-url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png'
+url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
 response = requests.get(url)
 img = Image.open(BytesIO(response.content))
 img.show()
