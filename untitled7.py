@@ -28,7 +28,11 @@ st.write("""
 #Open and display an image 
 url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png'
 response = requests.get(url)
-image = Image.open(BytestIO(response.content))
+img = Image.open(BytesIO(response.content))
+img.show()
+
+
+
 #image = Image.open('https://github.com/TeckVo/GUI-design/blob/main/Figure_set/Picture1.png')
 st.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
 
