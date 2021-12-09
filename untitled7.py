@@ -26,15 +26,15 @@ st.write("""
          """)
          
 #Open and display an image 
-#url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
-#response = requests.get(url)
-#img = Image.open(BytesIO(response.content))
+url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
 #img.show()
 
 
 
-image = Image.open('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png')
-st.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
+#image = Image.open('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png')
+st.img(image, caption='Major components in a simulated microgrid',use_column_width=True)
 
 df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Data.csv')
 
