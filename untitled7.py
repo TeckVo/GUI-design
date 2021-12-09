@@ -29,12 +29,12 @@ st.write("""
 url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
 response = requests.get(url)
 img = Image.open(BytesIO(response.content))
-#img.show()
+img.show()
 
 
 
 #image = Image.open('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png')
-st.img(image, caption='Major components in a simulated microgrid',use_column_width=True)
+#st.img(image, caption='Major components in a simulated microgrid',use_column_width=True)
 
 df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Data.csv')
 
