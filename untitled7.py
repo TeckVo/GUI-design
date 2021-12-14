@@ -89,16 +89,16 @@ def get_user_input():
     defaultMax = time(20,00)
     Interruption_time = col2.slider('Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
     with col2.expander("See explanation"):
-         st.write("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
+         st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
          
     #col2.caption('*"Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid."*')
     Confidence_level = col2.slider('Confidence_level [%]', 0.00, 1.00, 0.1) 
     with col2.expander("See explanation"):
-         st.write("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
+         st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
     Desired_temp_HVAC = col2.number_input('Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 2.00)
     with col2.expander("See explanation"):
-         st.write("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
+         st.caption("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
     Desired_temp_EWH = col2.number_input('Desired_temp_EWH [°C]', 30.00, 70.00, 40.00, 5.00)
     with col2.expander("See explanation"):
@@ -136,7 +136,9 @@ df_2 = pd.DataFrame(center_info_data[:96], columns = ['CHP1','CHP2'])
 
 app_model = col2.selectbox('Choose system',
                                ['ESS', 'CHP'])
-col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
+with col2.expander("See explanation"):
+         st.caption("""*Selecting system needs to schedule for reacting to the extreme events.*""")
+#col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
               
         
 if  col2.button('Click me'):
