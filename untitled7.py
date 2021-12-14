@@ -83,7 +83,7 @@ elif app_model == 'Capacity':
 
 def get_user_input():
     #st.sidebar.header('Customized input data')
-    minTime = time(15,00)
+    minTime = time(22,00)
     maxTime = time(23,00)
     defaultMin = time(10,00)
     defaultMax = time(20,00)
