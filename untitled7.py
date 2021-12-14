@@ -89,7 +89,10 @@ def get_user_input():
     defaultMax = time(20,00)
     Interruption_time = col2.slider('Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
     with col2.expander("See explanation"):
-         col2.caption('*"Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid."*')
+         col2.write("""
+         *Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*
+     """)
+         
     #col2.caption('*"Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid."*')
     Confidence_level = col2.slider('Confidence_level [%]', 0.00, 1.00, 0.1) 
     col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
