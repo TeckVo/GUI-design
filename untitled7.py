@@ -89,7 +89,7 @@ def get_user_input():
     defaultMax = time(20,00)
     Interruption_time = col2.slider('Interruption_time', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
     Confidence_level = col2.slider('Confidence_level [%]', 0.00, 1.00, 0.1)     
-    Desired_temp_HVAC = col2.number_input('Desired_temp_HVAC [°C]',18.00, 35.00, 1.00) 
+    Desired_temp_HVAC = col2.number_input('Desired_temp_HVAC [°C]',18.00, 35.00) 
     Desired_temp_EWH = col2.number_input('Desired_temp_EWH [°C]', 30.00, 70.00) 
     #Interruption_time = col2.time_input('Interruption_time')
     #Desired_temp_HVAC = col2.selectbox('Desired_temp_HVAC [°C]',['select', 18, 20, 22, 24, 26, 28, 30, 32])
