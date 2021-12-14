@@ -62,10 +62,11 @@ if app_model == 'Load demand':
         return data
     load_demand = load_data(365)
     col1.line_chart(load_demand)
-    
     #st.write(weekly_data)
 elif app_model == 'Solar irradiance':
     col1.caption(f"{app_model}")
+    with col1.expander("See explanation"):
+                  st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
     @st.cache
     def solar_irradiance(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
@@ -74,6 +75,8 @@ elif app_model == 'Solar irradiance':
     col1.line_chart(solar_data)
 elif app_model == 'Capacity':
     col1.caption(f"{app_model}")
+    with col1.expander("See explanation"):
+                  st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
     @st.cache
     def output_capacity(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
