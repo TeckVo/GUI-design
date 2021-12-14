@@ -123,8 +123,8 @@ if  col2.button('Click me'):
     #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=0, test_size=0.25)
     #RandomForestClassifier = RandomForestClassifier()
     #RandomForestClassifier.fit(X_train, Y_train)
-    col4.metric('Comfort level', '99.98 %')
-    col4.metric('Operating cost', '148.35 $')
+    col4.metric('Comfort level', '99.98 %', '0.02 %')
+    col4.metric('Operating cost', '110.54 $', '197.54 $')
     if app_model == 'ESS':
          col3.caption(f"{app_model} system")
          col3.write("""
