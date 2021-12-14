@@ -55,7 +55,7 @@ app_model = col1.selectbox('Choose data',
 if app_model == 'Load demand':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
-                  st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
+                  st.caption("""*Base load for one year during 365 days [MW/h].*""")
     @st.cache
     def load_data(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
@@ -66,7 +66,7 @@ if app_model == 'Load demand':
 elif app_model == 'Solar irradiance':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
-                  st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
+                  st.caption("""*Solar irradiance data [W/m2] for one year during 35,040 time slots.*""")
     @st.cache
     def solar_irradiance(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
@@ -76,7 +76,7 @@ elif app_model == 'Solar irradiance':
 elif app_model == 'Capacity':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
-                  st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
+                  st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")
     @st.cache
     def output_capacity(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
