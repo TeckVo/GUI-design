@@ -138,16 +138,15 @@ if  col2.button('Click me'):
     col4.metric('Comfort level', '99.98 %', '4.98 % basiline 95 %')
     col4.metric('Operating cost', '110.54 $', '-44.04 % basiline 197.54 $')
     if app_model == 'ESS':
-         col2.caption('*"Desired temperature (°C) of EWH system in the range [30°C; 70°C] during during the microgrid islanding period."*')
          col3.caption(f"{app_model} system")
          col3.write("""
-         Discharging power [MW] from ESSs at each time slot.
+         *Discharging power [MW] from ESSs at each time slot.*
          """)
          col3.line_chart(df_1)
     elif app_model == 'CHP':
         col3.caption(f"{app_model} system: ")
         col3.write("""
-         Discharging power [MW] from CHPs at each time slot.
+         *Discharging power [MW] from CHPs at each time slot.*
          """)
         col3.line_chart(df_2)
 else:
