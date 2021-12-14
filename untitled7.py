@@ -99,8 +99,8 @@ def get_user_input():
                  'Desired_temp_EWH': Desired_temp_EWH,
                  'Confidence_level': Confidence_level
                  }
-    features = pd.DataFrame(user_data, index = [0])
-    return features 
+    #features = pd.DataFrame(user_data, index = [0])
+    #return features 
 user_input = get_user_input()
 
 
