@@ -84,10 +84,10 @@ elif app_model == 'Capacity':
 def get_user_input():
     #st.sidebar.header('Customized input data')
     Interruption_time = col2.time_input('Interruption_time')
-    Desired_temp_HVAC = col2.slider('Desired_temp_HVAC [°C]',18°C, 35°C, 18°C) 
-         
+    Desired_temp_HVAC = col2.slider('Desired_temp_HVAC [°C]',18, 35, 18) 
+    Desired_temp_EWH = col2.slider('Desired_temp_EWH [°C]', 30, 70)     
     #Desired_temp_HVAC = col2.selectbox('Desired_temp_HVAC [°C]',['select', 18, 20, 22, 24, 26, 28, 30, 32])
-    Desired_temp_EWH = col2.selectbox('Desired_temp_EWH [°C]', ['select', 30, 35, 40, 45, 50, 55, 60, 65, 70])
+    #Desired_temp_EWH = col2.selectbox('Desired_temp_EWH [°C]', ['select', 30, 35, 40, 45, 50, 55, 60, 65, 70])
     Confidence_level = col2.slider('Confidence_level [%]', 0.00, 1.00, 0.1)
     user_data = {'Interruption_time': Interruption_time,
                  'Desired_temp_HVAC': Desired_temp_HVAC,
