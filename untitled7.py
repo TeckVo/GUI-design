@@ -54,6 +54,8 @@ app_model = col1.selectbox('Choose data',
                                ['Load demand', 'Capacity', 'Solar irradiance'])
 if app_model == 'Load demand':
     col1.caption(f"{app_model}")
+    with col1.expander("See explanation"):
+                  st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
     @st.cache
     def load_data(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
