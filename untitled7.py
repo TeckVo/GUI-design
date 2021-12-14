@@ -93,11 +93,17 @@ def get_user_input():
          
     #col2.caption('*"Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid."*')
     Confidence_level = col2.slider('Confidence_level [%]', 0.00, 1.00, 0.1) 
-    col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
+    with col2.expander("See explanation"):
+         st.write("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
+    #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
     Desired_temp_HVAC = col2.number_input('Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 2.00)
-    col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
-    Desired_temp_EWH = col2.number_input('Desired_temp_EWH [°C]', 30.00, 70.00, 40.00, 5.00) 
-    col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
+    with col2.expander("See explanation"):
+         st.write("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
+    #col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
+    Desired_temp_EWH = col2.number_input('Desired_temp_EWH [°C]', 30.00, 70.00, 40.00, 5.00)
+    with col2.expander("See explanation"):
+         st.caption("""*Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
+    #col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
     #Interruption_time = col2.time_input('Interruption_time')
     #Desired_temp_HVAC = col2.selectbox('Desired_temp_HVAC [°C]',['select', 18, 20, 22, 24, 26, 28, 30, 32])
     #Desired_temp_EWH = col2.selectbox('Desired_temp_EWH [°C]', ['select', 30, 35, 40, 45, 50, 55, 60, 65, 70])
