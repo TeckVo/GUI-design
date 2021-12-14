@@ -83,10 +83,10 @@ elif app_model == 'Capacity':
 
 def get_user_input():
     #st.sidebar.header('Customized input data')
-    minTime = time(06,00)
-    maxTime = time(07,00)
-    defaultMin = time(00,00)
-    defaultMax = time(00,00)
+    minTime = time(00,00)
+    maxTime = time(23,00)
+    defaultMin = time(10,00)
+    defaultMax = time(20,00)
     Interruption_time = col2.slider('Interruption_time', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
     Desired_temp_HVAC = col2.slider('Desired_temp_HVAC [°C]',18.00, 35.00) 
     Desired_temp_EWH = col2.slider('Desired_temp_EWH [°C]', 30.00, 70.00) 
