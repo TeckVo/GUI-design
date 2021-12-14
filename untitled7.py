@@ -79,7 +79,13 @@ elif app_model == 'Capacity':
     capacity_data = output_capacity(8760)
     #st.line_chart(capacity_data)
     col1.area_chart(capacity_data)
-
+         
+         
+uploaded_files = col1.file_uploader("Choose a CSV file", accept_multiple_files=True)
+for uploaded_file in uploaded_files:
+     bytes_data = uploaded_file.read()
+     st.write("filename:", uploaded_file.name)
+     st.write(bytes_data)
 
 def get_user_input():
     #st.sidebar.header('Customized input data')
