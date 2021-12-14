@@ -125,7 +125,7 @@ def load_center_data(nrows):
 center_info_data = load_center_data(96)  
 df_2 = pd.DataFrame(center_info_data[:96], columns = ['CHP1','CHP2'])   
 
-app_model = col2.selectbox('Choose system,
+app_model = col2.selectbox('Choose system',
                                ['ESS', 'CHP'])
 col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
               
