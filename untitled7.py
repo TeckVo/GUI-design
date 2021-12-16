@@ -149,7 +149,7 @@ line_chart_1 = alt.Chart(df_1).mark_line().encode(
     alt.Y('y', title='Discharging power [MW]'),
     color='ESS:N').properties(title='ESS scheduling')
 
-def load_data(nrows):
+def load_center_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20CHP.csv', nrows=nrows)
      return data
 center_info_data = load_center_data(96)
