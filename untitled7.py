@@ -62,7 +62,7 @@ if app_model == 'Load demand':
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
         return data
     load_demand = load_data(365)
-    alt.Chart(load_demand).mark_bar().encode(
+    col1.alt.Chart(load_demand).mark_bar().encode(
              x='year:O',
              y="wheat:Q",)
    
