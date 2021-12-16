@@ -185,7 +185,7 @@ if  col2.button('Click me'):
          @st.cache
          def load_data(nrows):
                   data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20ESS.csv', nrows=nrows)
-                   return data
+                  return data
          weekly_data = load_data(96)
          df_1 = pd.DataFrame(weekly_data[:96],columns = ['ESS1','ESS2'], index=pd.RangeIndex(100, name='x')
          df_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
