@@ -148,8 +148,9 @@ df_2 = pd.DataFrame(center_info_data[:96], columns = ['CHP1','CHP2'])
 app_model = col2.selectbox('Choose system',
                                ['ESS', 'CHP'])
 with col2.expander("See explanation"):
-         st.caption("""*Selecting system needs to schedule for reacting to the extreme events.*""")
-         st.caption("""*1. ESS is energy storage system. 2. CHP is gas-combined heat and power system.*""")
+         st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
+         in which ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
+         
 #col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
               
         
@@ -174,15 +175,15 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
     if app_model == 'ESS':
          col3.caption(f"{app_model} system")
-         col3.write("""
-         *Discharging power [MW] from ESSs at each time slot.*
-         """)
+         with col3.expander("See explanation"):
+                  st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
+         in which ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
          col3.line_chart(df_1)
     elif app_model == 'CHP':
         col3.caption(f"{app_model} system: ")
-        col3.write("""
-         *Discharging power [MW] from CHPs at each time slot.*
-         """)
+        with col3.expander("See explanation"):
+                   st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
+         in which ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
         col3.line_chart(df_2)
 else:
     st.write('Loading data....')
