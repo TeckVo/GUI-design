@@ -107,11 +107,11 @@ def get_user_input():
     with col2.expander("See explanation"):
          st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
-    Desired_temp_HVAC = col2.number_input('Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 2.00)
+    Desired_temp_HVAC = col2.number_input('Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 1.00)
     with col2.expander("See explanation"):
          st.caption("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
-    Desired_temp_EWH = col2.number_input('Desired_temp_EWH [°C]', 30.00, 70.00, 40.00, 5.00)
+    Desired_temp_EWH = col2.number_input('Desired_temp_EWH [°C]', 30.00, 70.00, 40.00, 1.00)
     with col2.expander("See explanation"):
          st.caption("""*Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
@@ -165,7 +165,7 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
                   
   
-    col4.metric('Operating cost', '110.54 $', '-44.04 % basiline 197.54 $')
+    col4.metric('Operating cost', '110.54 $', '-44.04 % baseline 197.54 $')
     with col4.expander("See explanation"):
                   st.caption("""*1. Operating cost of microgrid consists the following cost components: (1) power purchase cost from the main gird; 
                   (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
