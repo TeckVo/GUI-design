@@ -159,6 +159,8 @@ if  col2.button('Click me'):
     #RandomForestClassifier = RandomForestClassifier()
     #RandomForestClassifier.fit(X_train, Y_train)
     col4.metric('Comfort level', '99.98 %', '4.98 % basiline 95 %')
+    with col4.expander("See explanation"):
+                  st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")      
     col4.metric('Operating cost', '110.54 $', '-44.04 % basiline 197.54 $')
     with col4.expander("See explanation"):
                   st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")      
