@@ -142,8 +142,8 @@ def load_data(nrows):
     return data
 weekly_data = load_data(96)
 df_1 = pd.DataFrame(weekly_data[:96],columns = ['ESS1','ESS2'], index=pd.RangeIndex(100, name='x')
-data_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
-line_chart = alt.Chart(data_1).mark_line().encode(alt.X('x', title='Time slot [min]'),alt.Y('y', title='Discharging power [MW]'),color='ESS:N').properties(title='ESS scheduling')
+df_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
+line_chart = alt.Chart(df_1).mark_line().encode(alt.X('x', title='Time slot [min]'),alt.Y('y', title='Discharging power [MW]'),color='ESS:N').properties(title='ESS scheduling')
                     
                     
 
