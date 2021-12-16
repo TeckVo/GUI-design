@@ -158,7 +158,7 @@ if  col2.button('Click me'):
     #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=0, test_size=0.25)
     #RandomForestClassifier = RandomForestClassifier()
     #RandomForestClassifier.fit(X_train, Y_train)
-    col4.metric('Comfort level', '99.98 %', '4.98 % baseline 95 %')
+    col4.metric('Comfort level', '99.98 %', '5.09 % baseline 94.89 %')
     with col4.expander("See explanation"):
                   st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
                   such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")
@@ -167,7 +167,10 @@ if  col2.button('Click me'):
   
     col4.metric('Operating cost', '110.54 $', '-44.04 % basiline 197.54 $')
     with col4.expander("See explanation"):
-                  st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")      
+                  st.caption("""*1. Operating cost of microgrid consists the following cost components: (1) power purchase cost from the main gird; 
+                  (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
+                  (4) penalty cost for power mismatches caused by extreme events.*""")
+                  st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
     if app_model == 'ESS':
          col3.caption(f"{app_model} system")
          col3.write("""
