@@ -149,6 +149,7 @@ app_model = col2.selectbox('Choose system',
                                ['ESS', 'CHP'])
 with col2.expander("See explanation"):
          st.caption("""*Selecting system needs to schedule for reacting to the extreme events.*""")
+         st.caption("""*1. ESS is energy storage system. 2. CHP is gas-combined heat and power system.*""")
 #col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
               
         
