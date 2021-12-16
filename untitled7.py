@@ -57,16 +57,18 @@ if app_model == 'Load demand':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
                   st.caption("""*Base load for one year during 365 days [MW/h].*""")
-    def load_data(nrows):
+    def base_load(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
         return data
-    load_demand = load_data(365)
-    load = alt.Chart(load_demand).mark_bar().encode(
-             x='year:O',
-             y="wheat:Q",)
-    col1.altair_chart(load) 
-
-       
+    load_demand = base_load(365)
+    df = pd.DataFrame(load_demand[:365],columns = ['Base load'],
+                    index=pd.RangeIndex(100, name='x')) 
+    df = df.reset_index().melt('x', var_name='Load demand', value_name='y')
+    line_chart = alt.Chart(df).mark_bar().encode(
+             alt.X('x', title='Time [day]'),
+             alt.Y('y', title='Base load [MW]'),color='Load demand:N'). properties(title='Load demand')
+    col1.altair_chart(line_chart)     
+   
          
          
          
