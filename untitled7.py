@@ -167,7 +167,7 @@ df_2 = df_2.reset_index().melt('x', var_name='CHP', value_name='y')
 line_chart_2 = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [min]'),
     alt.Y('y', title='Discharging power [MW]'),
-    color='ESS:N').properties(title='CHP scheduling')
+    color='CHP:N').properties(title='CHP scheduling')
                    
 
                     
