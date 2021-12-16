@@ -65,7 +65,7 @@ if app_model == 'Load demand':
     load = alt.Chart(load_demand).mark_line().encode(
              x='year:O',
              y="wheat:Q",)
-    col1.alrair_chart(load)
+    col1.altair_chart(load)
    
     #col1.alt.line_chart(load_demand)
 
