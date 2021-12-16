@@ -146,12 +146,18 @@ def load_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20ESS.csv', nrows=nrows)
      return data
 weekly_data = load_data(96)
-df_1 = pd.DataFrame(weekly_data[:96],columns = ['ESS1','ESS2'])
+df_1 = pd.DataFrame(weekly_data[:96],columns = ['ESS1','ESS2'], index=pd.RangeIndex(100, name='x')  
+df_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
+line_chart_1 = alt.Chart(df_1).mark_line().encode(
+    alt.X('x', title='Time slot [min]'),
+    alt.Y('y', title='Discharging power [MW]'),
+    color='ESS:N').properties(title='ESS scheduling')
+                    
 @st.cache
 def load_center_data(nrows):
     data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20CHP.csv',nrows=nrows)
     return data
-center_info_data = load_center_data(96)  
+center_info_data = load_center_data(96)
 df_2 = pd.DataFrame(center_info_data[:96], columns = ['CHP1','CHP2'])   
 
 app_model = col2.selectbox('Choose system',
@@ -186,7 +192,9 @@ if  col2.button('Click me'):
          col3.caption(f"{app_model} system")
          with col3.expander("See explanation"):
                   st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
-         col3.line_chart(df_1)
+         col3.altair_chart(line_chart_1)
+         #col3.line_chart(df_1)
+                    
     elif app_model == 'CHP':
         col3.caption(f"{app_model} system: ")
         with col3.expander("See explanation"):
