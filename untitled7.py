@@ -62,7 +62,7 @@ if app_model == 'Load demand':
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
         return data
     load_demand = load_data(365)
-    col1.line_chart(load_demand).encode(x='a', y='b')
+    col1.alt.line_chart(load_demand).encode(x='a', y='b')
 
 
 
