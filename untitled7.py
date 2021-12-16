@@ -76,7 +76,7 @@ elif app_model == 'Solar irradiance':
 elif app_model == 'Capacity':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
-                  st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")
+                  st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW.*""")
     @st.cache
     def output_capacity(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
@@ -160,7 +160,8 @@ if  col2.button('Click me'):
     #RandomForestClassifier.fit(X_train, Y_train)
     col4.metric('Comfort level', '99.98 %', '4.98 % basiline 95 %')
     with col4.expander("See explanation"):
-                  st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")      
+                  st.caption("""*Comfort level denotes for continuous power supplying to critical loads, 
+                  such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")      
     col4.metric('Operating cost', '110.54 $', '-44.04 % basiline 197.54 $')
     with col4.expander("See explanation"):
                   st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")      
