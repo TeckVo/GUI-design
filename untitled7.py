@@ -161,8 +161,9 @@ if  col2.button('Click me'):
     col4.metric('Comfort level', '99.98 %', '4.98 % baseline 95 %')
     with col4.expander("See explanation"):
                   st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
-                  such as HVAC and EWH systems during the islanding microgrid period caused by extreme events. 
-                  2. Baseline comfort leve is defined based on scenario-based stochastic programmin method*""")  
+                  such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")
+                  st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
+                  
   
     col4.metric('Operating cost', '110.54 $', '-44.04 % basiline 197.54 $')
     with col4.expander("See explanation"):
