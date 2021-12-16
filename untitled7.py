@@ -161,7 +161,7 @@ def load_center_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20CHP.csv', nrows=nrows)
      return data
 center_info_data = load_center_data(96)
-df_2 = pd.DataFrame(weekly_data[:96],columns = ['CHP1','CHP2'],
+df_2 = pd.DataFrame(center_info_data[:96],columns = ['CHP1','CHP2'],
                     index=pd.RangeIndex(100, name='x'))    
 df_2 = df_2.reset_index().melt('x', var_name='CHP', value_name='y')
 line_chart_2 = alt.Chart(df_2).mark_line().encode(
