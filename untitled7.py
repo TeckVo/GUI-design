@@ -60,6 +60,7 @@ if app_model == 'Load demand':
     url_1 = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Base_load.png'
     response = requests.get(url_1)
     image = Image.open(BytesIO(response.content))
+    image.show()
 
 
 
