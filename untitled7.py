@@ -158,10 +158,12 @@ if  col2.button('Click me'):
     #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=0, test_size=0.25)
     #RandomForestClassifier = RandomForestClassifier()
     #RandomForestClassifier.fit(X_train, Y_train)
-    col4.metric('Comfort level', '99.98 %', '4.98 % basiline 95 %')
+    col4.metric('Comfort level', '99.98 %', '4.98 % baseline 95 %')
     with col4.expander("See explanation"):
-                  st.caption("""*Comfort level denotes for continuous power supplying to critical loads, 
-                  such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")      
+                  st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
+                  such as HVAC and EWH systems during the islanding microgrid period caused by extreme events. 
+                  2. Baseline comfort leve is defined based on scenario-based stochastic programmin method*""")  
+  
     col4.metric('Operating cost', '110.54 $', '-44.04 % basiline 197.54 $')
     with col4.expander("See explanation"):
                   st.caption("""*Outout power [MW/h] of a roof-top solar panel with installed capacity 6MW.*""")      
