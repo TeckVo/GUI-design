@@ -136,17 +136,25 @@ def get_user_input():
     #features = pd.DataFrame(user_data, index = [0])
     #return features 
 user_input = get_user_input()
-@st.cache
-def load_data(nrows):
-    data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20ESS.csv', nrows=nrows)  
-    return data
-weekly_data = load_data(96)
-df_1 = pd.DataFrame(weekly_data[:96],columns = ['ESS1','ESS2'], index=pd.RangeIndex(100, name='x')
-df_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
-line_chart = alt.Chart(df_1).mark_line().encode(alt.X('x', title='Time slot [min]'),alt.Y('y', title='Discharging power [MW]'),color='ESS:N').properties(title='ESS scheduling')
-                    
-                    
 
+def load_data(nrows):
+     data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20ESS.csv', nrows=nrows)
+     return data
+weekly_data = load_data(96)
+df_1 = pd.DataFrame(weekly_data[:96],columns = ['ESS1','ESS2'],
+                    index=pd.RangeIndex(100, name='x'))    
+df_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
+line_chart = alt.Chart(df_1).mark_line().encode(
+    alt.X('x', title='Time slot [min]'),
+    alt.Y('y', title='Discharging power [MW]'),
+    color='ESS:N').properties(title='ESS scheduling')
+
+st.altair_chart(line_chart)                    
+
+                    
+                    
+                    
+                    
 
 
                       
