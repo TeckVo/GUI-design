@@ -66,7 +66,7 @@ if app_model == 'Load demand':
 elif app_model == 'Solar irradiance':
     #col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
-                  st.caption("""*Solar irradiance data [W/m2] for one year during 35,040 time slots.*""")
+                  st.caption("""*Solar irradiance data [W/m2] for one year during 8,760 time slots [hour].*""")
     @st.cache
     def solar_irradiance(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
