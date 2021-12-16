@@ -164,7 +164,7 @@ center_info_data = load_center_data(96)
 df_2 = pd.DataFrame(weekly_data[:96],columns = ['CHP1','CHP2'],
                     index=pd.RangeIndex(100, name='x'))    
 df_2 = df_2.reset_index().melt('x', var_name='CHP', value_name='y')
-line_chart_2 = alt.Chart(df_1).mark_line().encode(
+line_chart_2 = alt.Chart(df_2).mark_line().encode(
     alt.X('x', title='Time slot [min]'),
     alt.Y('y', title='Discharging power [MW]'),
     color='CHP:N').properties(title='CHP scheduling')
