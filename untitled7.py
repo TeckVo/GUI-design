@@ -76,7 +76,7 @@ elif app_model == 'Solar irradiance':
 elif app_model == 'Capacity':
     #col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
-                  st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW.*""")
+                  st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
     @st.cache
     def output_capacity(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
