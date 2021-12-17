@@ -70,7 +70,7 @@ power_out = capacity_data(8760)
 df_2 = pd.DataFrame(power_out[:8760], columns = ['Output1'],
                     index=pd.RangeIndex(8760, name='x'))
 df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
-line_chart_1 = alt.Chart(df_2).mark_line().encode(
+line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.X('x', title='Time solt [hour]'),
          alt.Y('y', title='Output power [Kw/h]'),
          color='Output:N').properties(title='Output power from solar panel system')
@@ -106,7 +106,7 @@ elif app_model == 'Solar irradiance':
     col1.line_chart(solar_data)
 elif app_model == 'Capacity':
     #col1.caption(f"{app_model}")
-    col1.altair_chart(line_chart_1)
+    col1.altair_chart(line_chart_3)
     with col1.expander("See explanation"):
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
     
@@ -223,15 +223,18 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
     if app_model == 'ESS':
          col3.caption(f"{app_model} system")
+         
+         col3.altair_chart(line_chart_1)
          with col3.expander("See explanation"):
                   st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
-         col3.altair_chart(line_chart_1)
          #col3.line_chart(df_1)           
     elif app_model == 'CHP':
         col3.caption(f"{app_model} system: ")
-        with col3.expander("See explanation"):
-                   st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
+       
         col3.altair_chart(line_chart_2)
+        with col3.expander("See explanation"):
+                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
+                  
         #col3.line_chart(df_2)
 else:
     st.write('Loading data....')
