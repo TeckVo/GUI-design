@@ -69,9 +69,9 @@ app_model = col1.selectbox('Choose data',
                                ['Load demand', 'Capacity', 'Solar irradiance'])
 if app_model == 'Load demand':
     #col1.caption(f"{app_model}")
+    col1.altair_chart(line_chart)
     with col1.expander("See explanation"):
                   st.caption("""*Base load for one year during 365 days [p.u/h].*""")
-    col1.altair_chart(line_chart)
 
 
 
