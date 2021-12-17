@@ -55,7 +55,7 @@ def base_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
      return data
 load_demand = base_data(365)
-df_1 = pd.DataFrame(load_demand[:365],columns = ['Load1'],
+df_1 = pd.DataFrame(load_demand[:365],columns = ['Load'],
                     index=pd.RangeIndex(365, name='x'))    
 df_1 = df_1.reset_index().melt('x', var_name='Load', value_name='y')
 line_chart = alt.Chart(df_1).mark_line().encode(
