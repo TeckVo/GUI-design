@@ -64,7 +64,7 @@ if app_model == 'Load demand':
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
         return data
     base_load = load_demand(365)
-    exampledata = np.array(weekly_data[1:],dtype=np.float64)
+    exampledata = np.array(weekly_data[1:],dtype=np.float)
     xdata=exampledata[:,0]
     ydata=exampledata[:,1]
     plt.plot(xdata,ydata)
