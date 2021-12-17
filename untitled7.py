@@ -68,9 +68,9 @@ line_chart = alt.Chart(df_1).mark_line().encode(
 app_model = col1.selectbox('Choose data',
                                ['Load demand', 'Capacity', 'Solar irradiance'])
 if app_model == 'Load demand':
-    col1.caption(f"{app_model}")
+    #col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
-                  st.caption("""*Base load for one year during 365 days [MW/h].*""")
+                  st.caption("""*Base load for one year during 365 days [p.u/h].*""")
     col1.altair_chart(line_chart)
 
 
@@ -82,7 +82,7 @@ if app_model == 'Load demand':
  
     #st.write(weekly_data)
 elif app_model == 'Solar irradiance':
-    col1.caption(f"{app_model}")
+    #col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
                   st.caption("""*Solar irradiance data [W/m2] for one year during 8,760 time slots [hour].*""")
     @st.cache
@@ -92,7 +92,7 @@ elif app_model == 'Solar irradiance':
     solar_data = solar_irradiance(8760)
     col1.line_chart(solar_data)
 elif app_model == 'Capacity':
-    col1.caption(f"{app_model}")
+    #col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
     @st.cache
