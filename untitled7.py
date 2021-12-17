@@ -14,7 +14,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 import streamlit as st 
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 from datetime import time
 import altair as alt
@@ -65,13 +65,13 @@ if app_model == 'Load demand':
     exampledata = np.array(base_load[1:], dtype=np.float64)
     xdata=exampledata[:,0]
     ydata=exampledata[:,1]
-    ax=plt.subplot(2, 1, 1)
+    fig, ax = plt.subplots()
     ax.plot(xdata,ydata)
     ax.set_xlabel("Time [day]")
     ax.set_ylabel("Base load [p.u]")   
     col1.pyplot(fig)  
     #col1.line_chart(base_load)
-    
+
 
 
 
