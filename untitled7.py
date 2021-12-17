@@ -58,8 +58,6 @@ if app_model == 'Load demand':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
                   st.caption("""*Base load for one year during 365 days [MW/h].*""")
-    
-    
     def load_demand(nrows):
         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
         return data
@@ -67,11 +65,10 @@ if app_model == 'Load demand':
     exampledata = np.array(base_load[1:], dtype=np.float64)
     xdata=exampledata[:,0]
     ydata=exampledata[:,1]
-fig, ax = plt.subplots()
-    
-    ax.plot(xdata,ydata)
-    ax.set_xlabel("Time [day]")
-    ax.set_ylabel("Base load [p.u]")   
+    fig = plt.subplots()
+    fig.plot(xdata,ydata)
+    fig.set_xlabel("Time [day]")
+    fig.set_ylabel("Base load [p.u]")   
     col1.pyplot(fig)  
     #col1.line_chart(base_load)
     
