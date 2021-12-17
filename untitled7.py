@@ -113,7 +113,7 @@ elif app_model == 'Capacity':
     #def output_capacity(nrows):
         #data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
         #return data
-    $capacity_data = output_capacity(8760)
+    #capacity_data = output_capacity(8760)
     #st.line_chart(capacity_data)
     #col1.area_chart(capacity_data)
          
