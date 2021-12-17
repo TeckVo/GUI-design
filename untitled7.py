@@ -58,6 +58,8 @@ if app_model == 'Load demand':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
                   st.caption("""*Base load for one year during 365 days [MW/h].*""")
+    url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv'
+    response = requests.get(url)
     with open ('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', 'r') as i:
          rawdata = list(csv.reader(i,delimiter=","))
     exampledata = np.array(rawdata[1:],dtype=np.float64)
@@ -75,7 +77,7 @@ if app_model == 'Load demand':
     #base_load = load_demand(365)
     #col1.line_chart(base_load)
     
-  
+
 
 
                
