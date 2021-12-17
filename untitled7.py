@@ -65,10 +65,10 @@ if app_model == 'Load demand':
     exampledata = np.array(base_load[1:], dtype=np.float64)
     xdata=exampledata[:,0]
     ydata=exampledata[:,1]
-    fig = plt.subplots()
-    fig.plot(xdata,ydata)
-    fig.set_xlabel("Time [day]")
-    fig.set_ylabel("Base load [p.u]")   
+    fig, ax = plt.subplots():
+    ax.plot(xdata,ydata)
+    ax.set_xlabel("Time [day]")
+    ax.set_ylabel("Base load [p.u]")   
     col1.pyplot(fig)  
     #col1.line_chart(base_load)
     
