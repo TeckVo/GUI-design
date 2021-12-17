@@ -14,7 +14,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 import streamlit as st 
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 from datetime import time
 import altair as alt
