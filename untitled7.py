@@ -74,7 +74,7 @@ if app_model == 'Load demand':
     col1.pyplot(fig)  
     #col1.line_chart(base_load)
     
-  
+
 
 
                
