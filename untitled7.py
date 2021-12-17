@@ -61,7 +61,16 @@ df_1 = df_1.reset_index().melt('x', var_name='Load', value_name='y')
 line_chart = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [day]'),
     alt.Y('y', title='Base load [p.u]'),
-    color='Load:N').properties(title='Load demand')
+    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand')
+
+
+
+
+
+
+
+
+
 
 def capacity_data(nrows):
          data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv',nrows=nrows)
@@ -170,7 +179,11 @@ df_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
 line_chart_1 = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [min]'),
     alt.Y('y', title='Discharging power [MW]'),
-    color='ESS:N').properties(title='ESS scheduling')
+    color=alt.Color('ESS:N', legend=alt.Legend(orient='bottom'))).properties(title='ESS scheduling')
+
+
+
+
 
 def load_center_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Discharging%20CHP.csv', nrows=nrows)
@@ -182,10 +195,10 @@ df_2 = df_2.reset_index().melt('x', var_name='CHP', value_name='y')
 line_chart_2 = alt.Chart(df_2).mark_line().encode(
     alt.X('x', title='Time slot [min]'),
     alt.Y('y', title='Discharging power [MW]'),
-    color='CHP:N').properties(title='CHP scheduling')
+    color=alt.Color('CHP:N', legend=alt.Legend(orient='bottom'))).properties(title='CHP scheduling')
                    
 
-                    
+          
                     
                     
                     
