@@ -19,7 +19,7 @@ import numpy as np
 from datetime import time
 import altair as alt
 import csv
-
+import matplotlib.pyplot as plt
 #Create a title and sub-title 
 
 st.title('Microgrid proactive scheduling')
@@ -70,34 +70,7 @@ if app_model == 'Load demand':
     ax.set_xlabel("Time [day]")
     ax.set_ylabel("Base load [p.u]")   
     col1.pyplot(fig)  
-    #col1.line_chart(base_load)
-
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-arr = np.random.normal(1, 1, size=100)
-fig, ax = plt.subplots()
-ax.hist(arr, bins=20)
-
-st.pyplot(fig)
-
-               
-   
-         
-         
-        
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
+    #col1.line_chart( base_load)
          
  
     #st.write(weekly_data)
