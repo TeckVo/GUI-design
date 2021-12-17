@@ -81,21 +81,20 @@ line_chart_3 = alt.Chart(df_2).mark_line().encode(
 def solar_data(nrows):
          data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance%20data.csv',nrows=nrows)
          return data
-solar_out = solar_data(8760)       
-df_4 = pd.DataFrame(power_out[:8760], columns = ['Solar'],
+solar_out = solar_data(8760)
+df_4 = pd.DataFrame(solar_out[:8760], columns = ['Solar'],
                     index=pd.RangeIndex(8760, name='x'))
 df_4 = df_4.reset_index().melt('x', var_name='Solar irradiance', value_name='y')
 line_chart_4 = alt.Chart(df_4).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Solar irradiance [W/m2]'),
          color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=300, height=300)
-    
-         
         
-         
-         
-         
-         
+    
+
+
+
+      
          
 #st.sidebar.header('Basic data')
 app_model = col1.selectbox('Choose data',
@@ -287,6 +286,4 @@ else:
    
 
 
-        
-    
     
