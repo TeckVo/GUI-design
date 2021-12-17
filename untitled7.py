@@ -14,12 +14,13 @@ from PIL import Image
 import requests
 from io import BytesIO
 import streamlit as st 
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import time
 import altair as alt
 import csv
-import matplotlib.pyplot as plt
+
 #Create a title and sub-title 
 
 st.title('Microgrid proactive scheduling')
