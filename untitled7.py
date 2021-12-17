@@ -51,6 +51,8 @@ col3, col4 = st.columns([2, 2])
 col3.header('Scheduling')
 col4.header('Rewards')
 
+
+
 def base_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
      return data
