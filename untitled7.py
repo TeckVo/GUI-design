@@ -78,6 +78,23 @@ line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.Y('y', title='Output power [Kw/h]'),
          color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=300, height=300)
 
+ def solar_data(nrows):
+         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance%20data.csv',nrows=nrows)
+         return data
+solar_out = solar_data(8760)
+df_4 = pd.DataFrame(power_out[:8760], columns = ['Solar'],
+                    index=pd.RangeIndex(8760, name='x'))
+df_4 = df_4.reset_index().melt('x', var_name='Solar irradiance', value_name='y')
+line_chart_4 = alt.Chart(df_4).mark_line().encode(
+         alt.X('x', title='Time slot [hour]'),
+         alt.Y('y', title='Solar irradiance [W/m2]'),
+         color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=300, height=300)
+    
+         
+        
+         
+         
+         
          
          
 #st.sidebar.header('Basic data')
@@ -99,14 +116,15 @@ if app_model == 'Load demand':
     #st.write(weekly_data)
 elif app_model == 'Solar irradiance':
     #col1.caption(f"{app_model}")
+    col1.altair_chart(line_chart_4)
     with col1.expander("See explanation"):
                   st.caption("""*Solar irradiance data [W/m2] for one year during 8,760 time slots [hour].*""")
-    @st.cache
-    def solar_irradiance(nrows):
-        data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
-        return data
-    solar_data = solar_irradiance(8760)
-    col1.line_chart(solar_data)
+    
+    #def solar_irradiance(nrows):
+        #data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
+        #return data
+    #solar_data = solar_irradiance(8760)
+    #col1.line_chart(solar_data)
 elif app_model == 'Capacity':
     #col1.caption(f"{app_model}")
     col1.altair_chart(line_chart_3)
