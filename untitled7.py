@@ -217,7 +217,7 @@ line_chart_2 = alt.Chart(df_2).mark_line().encode(
 
                    
 
-app_model = col2.selectbox('Choose system',
+app_model = col2.selectbox('5. Choose system',
                                ['ESS', 'CHP'])
 with col2.expander("See explanation"):
          st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
