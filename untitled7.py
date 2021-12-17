@@ -74,7 +74,7 @@ df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
 line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.X('x', title='Time solt [hour]'),
          alt.Y('y', title='Output power [Kw/h]'),
-         color=alt.Color('Output:N', legend=alt.Lenged(orient='bottom'))).properties(title='Output power from solar panel system', width=300, height=300 )
+         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=300, height=300)
 
          
          
