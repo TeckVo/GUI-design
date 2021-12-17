@@ -73,16 +73,16 @@ line_chart = alt.Chart(df_1).mark_line().encode(
 
 
 def capacity_data(nrows):
-         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv',nrows=nrows)
+         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Power%20output.csv',nrows=nrows)
          return data
 power_out = capacity_data(8760)
-df_2 = pd.DataFrame(power_out[:8760], columns = ['Output1'],
+df_2 = pd.DataFrame(power_out[:8760], columns = ['Power'],
                     index=pd.RangeIndex(8760, name='x'))
 df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
 line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.X('x', title='Time solt [hour]'),
          alt.Y('y', title='Output power [Kw/h]'),
-         color='Output:N').properties(title='Output power from solar panel system')
+         color='Output:N').properties(title='Output power from solar panel system', width=300, height=300 )
 
          
          
