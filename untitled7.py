@@ -63,7 +63,20 @@ line_chart = alt.Chart(df_1).mark_line().encode(
     alt.Y('y', title='Base load [p.u]'),
     color='Load:N').properties(title='Load demand')
 
+def capacity_data(nrows):
+         data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv',nrows=nrows)
+         return data
+capacity_out = capacity_data(8760)
+df_2 = pd.DataFrame(capacity_out[:8760], columns = ['Output1'],
+                    index=pd.RangeIndex(8760, name='x'))
+df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
+line_chart_1 = alt.Chart(df_2).mark_line().encode(
+         alt.X('x', title='Time solt [hour]'),
+         alt.Y('y', title='Output power [Kw/h]'),
+         color='Output:N').properties(title='Output power from solar panel system')
 
+         
+         
 #st.sidebar.header('Basic data')
 app_model = col1.selectbox('Choose data',
                                ['Load demand', 'Capacity', 'Solar irradiance'])
@@ -93,15 +106,16 @@ elif app_model == 'Solar irradiance':
     col1.line_chart(solar_data)
 elif app_model == 'Capacity':
     #col1.caption(f"{app_model}")
+    col1.altair_chart(line_chart_1)
     with col1.expander("See explanation"):
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
-    @st.cache
-    def output_capacity(nrows):
-        data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
-        return data
-    capacity_data = output_capacity(8760)
+    
+    #def output_capacity(nrows):
+        #data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
+        #return data
+    $capacity_data = output_capacity(8760)
     #st.line_chart(capacity_data)
-    col1.area_chart(capacity_data)
+    #col1.area_chart(capacity_data)
          
          
 uploaded_files = col1.file_uploader("Upload a new CSV file data", accept_multiple_files=True)
