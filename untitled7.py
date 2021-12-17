@@ -66,8 +66,8 @@ line_chart = alt.Chart(df_1).mark_line().encode(
 def capacity_data(nrows):
          data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv',nrows=nrows)
          return data
-capacity_out = capacity_data(8760)
-df_2 = pd.DataFrame(capacity_out[:8760], columns = ['Output1'],
+power_out = capacity_data(8760)
+df_2 = pd.DataFrame(power_out[:8760], columns = ['Output1'],
                     index=pd.RangeIndex(8760, name='x'))
 df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
 line_chart_1 = alt.Chart(df_2).mark_line().encode(
