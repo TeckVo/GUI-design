@@ -179,7 +179,7 @@ df_1 = df_1.reset_index().melt('x', var_name='ESS', value_name='y')
 line_chart_1 = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [min]'),
     alt.Y('y', title='Discharging power [MW]'),
-    color=alt.Color('ESS:N', legend=alt.Legend(orient='bottom'))).properties(title='ESS scheduling')
+    color=alt.Color('ESS:N', legend=alt.Legend(orient='bottom'))).properties(title='ESS scheduling', width=300, height=300)
 
 
 
@@ -195,7 +195,7 @@ df_2 = df_2.reset_index().melt('x', var_name='CHP', value_name='y')
 line_chart_2 = alt.Chart(df_2).mark_line().encode(
     alt.X('x', title='Time slot [min]'),
     alt.Y('y', title='Discharging power [MW]'),
-    color=alt.Color('CHP:N', legend=alt.Legend(orient='bottom'))).properties(title='CHP scheduling')
+    color=alt.Color('CHP:N', legend=alt.Legend(orient='bottom'))).properties(title='CHP scheduling', width=300, height=300)
                    
 
           
