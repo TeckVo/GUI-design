@@ -52,7 +52,7 @@ col3.header('Scheduling')
 col4.header('Rewards')
 
 def base_data(nrows):
-     data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
+     data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
      return data
 load_demand = base_data(365)
 df_1 = pd.DataFrame(load_demand[:365],columns = ['Load1'],
@@ -63,6 +63,7 @@ line_chart = alt.Chart(df_1).mark_line().encode(
     alt.Y('y', title='Base load [p.u]'),
     color='Load:N').properties(title='Load demand')
 
+
 #st.sidebar.header('Basic data')
 app_model = col1.selectbox('Choose data',
                                ['Load demand', 'Capacity', 'Solar irradiance'])
@@ -70,7 +71,7 @@ if app_model == 'Load demand':
     col1.caption(f"{app_model}")
     with col1.expander("See explanation"):
                   st.caption("""*Base load for one year during 365 days [MW/h].*""")
-    
+    col1.altair_chart(line_chart)
 
 
 
