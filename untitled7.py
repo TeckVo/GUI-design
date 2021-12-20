@@ -230,7 +230,7 @@ if  col2.button('Click me'):
     with col4.expander("See explanation"):
                   st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
                   such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")
-                  st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
+                  st.caption ("""*2. Baseline comfort level is defined based on scenario-based stochastic programming method.*""")
                  
     col4.metric('Operating cost', '110.54 $', '-44.04 % compared with baseline 197.54 $')
     d = {' cost1 [$]': [49.12], ' cost2 [$]': [27.21], ' cost3 [$]': [25.08], 'cost4 [$]': [09.13] }
@@ -242,7 +242,7 @@ if  col2.button('Click me'):
                   st.caption("""* cost2: degradation cost of energy storage systems (ESSs);""")
                   st.caption("""* cost3: operating cost of gas-combined heat and power systems (CHPs);""")
                   st.caption("""* cost4: penalty cost for power mismatches caused by extreme events.""")
-                  st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
+                  st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
     col3.caption('Choose system needs to schedule')
     
     with col3.expander("See explanation"):
