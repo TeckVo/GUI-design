@@ -237,7 +237,7 @@ if  col2.button('Click me'):
     df = pd.DataFrame(data=d)
     col4.table(df)
     with col4.expander("See explanation"):
-                  st.caption("""*1. Total operating cost of microgrid consists the following cost components: cost1: power purchase cost from the main gird; 
+                  st.markdown("""*1. Total operating cost of microgrid consists the following cost components: cost1: power purchase cost from the main gird; 
                   cost2: degradation cost of energy storage systems (ESSs); cost3: operating cost of gas-combined heat and power systems (CHPs); 
                   cost4: penalty cost for power mismatches caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
