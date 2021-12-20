@@ -240,19 +240,20 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
     
     col3.caption('Choose system needs to schedule')
-    with col3.expander("See explanation"):
-         st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
-         in which:*""")
-         st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")     
+       
 else:
     st.write('Loading data....')
 
 
 
-app_model = col3.selectbox(' Choose system needs to schedule',
+app_model = col3.selectbox(' Choose system',
                                ['Please select system', 'ESS', 'CHP'])
 if app_model == 'Please select system':
          col3.caption(f"{app_model} system")
+         with col3.expander("See explanation"):
+         st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
+         in which:*""")
+         st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")  
 if app_model == 'ESS':
          col3.caption(f"{app_model} system")
          col3.altair_chart(line_chart_1)
