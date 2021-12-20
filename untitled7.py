@@ -233,14 +233,14 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
                  
     col4.metric('Operating cost', '110.54 $', '-44.04 % compared withbaseline 197.54 $')
+    d = {'electricity cost [$]': [49.12], 'degradation cost [$]': [27.21], 'operating cost [$]': [25.08], 'penalty cost [$]': [09.13] }
+    df = pd.DataFrame(data=d)
+    col4.table(df)
     with col4.expander("See explanation"):
                   st.caption("""*1. Operating cost of microgrid consists the following cost components: (1) power purchase cost from the main gird; 
                   (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
                   (4) penalty cost for power mismatches caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
-    d = {'electricity cost [$]': [49.12], 'degradation cost [$]': [27.21], 'operating cost [$]': [25.08], 'penalty cost [$]': [09.13] }
-    df = pd.DataFrame(data=d)
-    col4.table(df)
     col3.caption('Choose system needs to schedule')
     
     with col3.expander("See explanation"):
