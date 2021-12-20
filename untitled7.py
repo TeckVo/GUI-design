@@ -209,9 +209,6 @@ line_chart_2 = alt.Chart(df_2).mark_line().encode(
     color=alt.Color('CHP:N', legend=alt.Legend(orient='bottom'))).properties(title='CHP scheduling', width=300, height=300)
                    
 
- app_model = col3.selectbox(' Choose system needs to schedule',
-                               ['ESS', 'CHP'])
-     
                     
                     
                     
@@ -234,24 +231,27 @@ if  col2.button('Click me'):
                   st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
                   such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
-                  
-  
+                 
     col4.metric('Operating cost', '110.54 $', '-44.04 % baseline 197.54 $')
     with col4.expander("See explanation"):
                   st.caption("""*1. Operating cost of microgrid consists the following cost components: (1) power purchase cost from the main gird; 
                   (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
                   (4) penalty cost for power mismatches caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
+    
     col3.caption('Choose system needs to schedule')
     with col3.expander("See explanation"):
          st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
          in which:*""")
          st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")     
+else:
+    st.write('Loading data....')
 
 
 
-
-
+app_model = col3.selectbox(' Choose system needs to schedule',
+                               ['ESS', 'CHP'])
+     
 
 if app_model == 'ESS':
          col3.caption(f"{app_model} system")
@@ -268,8 +268,7 @@ if app_model == 'ESS':
                   st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
                   
         #col3.line_chart(df_2)
-else:
-    st.write('Loading data....')
+
 
  
 
