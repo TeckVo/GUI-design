@@ -250,7 +250,9 @@ else:
 
 
 app_model = col3.selectbox(' Choose system needs to schedule',
-                               ['ESS', 'CHP'])
+                               ['Please select system', 'ESS', 'CHP'])
+if app_model == 'Please select system':
+         col3.caption(f"{app_model} system")
 if app_model == 'ESS':
          col3.caption(f"{app_model} system")
          col3.altair_chart(line_chart_1)
