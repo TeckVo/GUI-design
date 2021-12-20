@@ -237,8 +237,17 @@ if  col2.button('Click me'):
                   st.caption("""*1. Operating cost of microgrid consists the following cost components: (1) power purchase cost from the main gird; 
                   (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
                   (4) penalty cost for power mismatches caused by extreme events.*""")
-                  st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
+                  st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
+     df = pd.DataFrame(49.12, 27.21, 25.08, 09.13
+                       columns=('electricity cost','degradation cost','operating cost','penalty cost')
+     col4.table(df)
     
+
+
+
+
+
+
     col3.caption('Choose system needs to schedule')
     
     with col3.expander("See explanation"):
