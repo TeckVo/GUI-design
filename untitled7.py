@@ -238,7 +238,7 @@ if  col2.button('Click me'):
                   (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
                   (4) penalty cost for power mismatches caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
-    d = {'electricity cost': [49.12$], 'degradation cost': [27.21$], 'operating cost': [25.08$], 'penalty cost': [09.13$] }
+    d = {'electricity cost [$]': [49.12], 'degradation cost [$]': [27.21], 'operating cost [$]': [25.08], 'penalty cost [$]': [09.13] }
     df = pd.DataFrame(data=d)
     col4.table(df)
     col3.caption('Choose system needs to schedule')
