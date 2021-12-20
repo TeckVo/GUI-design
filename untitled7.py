@@ -233,7 +233,7 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
                  
     col4.metric('Operating cost', '110.54 $', '-44.04 % compared with baseline 197.54 $')
-    d = {"""*electricity cost*""" [$]': [49.12], 'degradation cost [$]': [27.21], 'operating cost [$]': [25.08], 'penalty cost [$]': [09.13] }
+    d = {'"""*electricity cost*""" [$]': [49.12], 'degradation cost [$]': [27.21], 'operating cost [$]': [25.08], 'penalty cost [$]': [09.13] }
     df = pd.DataFrame(data=d)
     col4.table(df)
     with col4.expander("See explanation"):
