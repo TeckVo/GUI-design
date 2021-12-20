@@ -209,7 +209,9 @@ line_chart_2 = alt.Chart(df_2).mark_line().encode(
     color=alt.Color('CHP:N', legend=alt.Legend(orient='bottom'))).properties(title='CHP scheduling', width=300, height=300)
                    
 
-          
+ app_model = col3.selectbox(' Choose system needs to schedule',
+                               ['ESS', 'CHP'])
+     
                     
                     
                     
@@ -217,12 +219,7 @@ line_chart_2 = alt.Chart(df_2).mark_line().encode(
 
                    
 
-app_model = col2.selectbox('5. Choose system',
-                               ['ESS', 'CHP'])
-with col2.expander("See explanation"):
-         st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
-         in which:*""")
-         st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""") 
+
 #col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
               
         
@@ -245,7 +242,18 @@ if  col2.button('Click me'):
                   (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
                   (4) penalty cost for power mismatches caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
-    if app_model == 'ESS':
+    col3.caption('Choose system needs to schedule')
+    with col3.expander("See explanation"):
+         st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
+         in which:*""")
+         st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")     
+
+
+
+
+
+
+if app_model == 'ESS':
          col3.caption(f"{app_model} system")
          
          col3.altair_chart(line_chart_1)
