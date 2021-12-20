@@ -240,8 +240,7 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")     
     
     col3.caption('Choose system needs to schedule')
-    app_model = col3.selectbox(
-                               ['Please select system', 'ESS', 'CHP'])  
+    
     with col3.expander("See explanation"):
                   st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
          in which:*""")
@@ -249,9 +248,7 @@ if  col2.button('Click me'):
 else:
     st.write('Loading data....')
 
-
-
-
+app_model = col3.selectbox(['Please select system', 'ESS', 'CHP']) 
 if app_model == 'Please select system':
          #col3.caption(f"{app_model} system"               
          
@@ -268,7 +265,7 @@ elif app_model == 'CHP':
                   st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
                          
                   
-        #col3.line_chart(df_2)
+     
 
 
  
@@ -279,21 +276,7 @@ elif app_model == 'CHP':
          
          
          
-#if  col2.button('Click me'):
-    
-   
-    
-        #col3.caption(f"{app_model}")
-        #
-    #elif app_model == 'CHP':
-       #col3.caption(f"{app_model}")
-        #col3.line_chart(df_2)
-
-
-        
-        #col3.write(weekly_data)
-
-        #col3.write(center_info_data)        
+     
     
         
    
