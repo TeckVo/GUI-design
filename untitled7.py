@@ -238,7 +238,7 @@ if  col2.button('Click me'):
                   (2) degradation cost of energy storage systems (ESSs); (3) operating cost of gas-combined heat and power systems (CHPs); 
                   (4) penalty cost for power mismatches caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
-     df = pd.DataFrame(49.12, 27.21, 25.08, 09.13
+     df = pd.DataFrame(49.12, 27.21, 25.08, 09.13, 
                        columns=('electricity cost','degradation cost','operating cost','penalty cost')
      col4.table(df)
     
