@@ -242,9 +242,6 @@ if  col2.button('Click me'):
                   st.caption("""* cost2: degradation cost of energy storage systems (ESSs);""")
                   st.caption("""* cost3: operating cost of gas-combined heat and power systems (CHPs);""")
                   st.caption("""* cost4: penalty cost for power mismatches caused by extreme events.""")
-             
-                    
-          
                   st.caption ("""*2. Baseline comfort leve is defined based on scenario-based stochastic programmin method.*""")
     col3.caption('Choose system needs to schedule')
     
