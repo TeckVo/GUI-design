@@ -246,7 +246,7 @@ if  col2.button('Click me'):
          in which:*""")
                   st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")  
 else:
-    st.write('Loading data....')
+    col2.write('Loading data....')
 
 app_model = col3.selectbox('Choose system',
                            ['Please select system', 'ESS', 'CHP'])
