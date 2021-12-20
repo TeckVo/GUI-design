@@ -249,9 +249,9 @@ else:
     st.write('Loading data....')
 
 app_model = col3.selectbox('Choose system',['Please select system', 'ESS', 'CHP']) 
+
 if app_model == 'Please select system':
          col3.caption(f"{app_model}"               
-         
 elif app_model == 'ESS':
          col3.caption(f"{app_model} system")
          col3.altair_chart(line_chart_1)
