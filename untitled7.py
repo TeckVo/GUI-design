@@ -251,18 +251,14 @@ else:
 
 app_model = col3.selectbox(' Choose system needs to schedule',
                                ['ESS', 'CHP'])
-     
-
 if app_model == 'ESS':
          col3.caption(f"{app_model} system")
-         
          col3.altair_chart(line_chart_1)
          with col3.expander("See explanation"):
                   st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
          #col3.line_chart(df_1)           
  elif app_model == 'CHP':
         col3.caption(f"{app_model} system: ")
-       
         col3.altair_chart(line_chart_2)
         with col3.expander("See explanation"):
                   st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
