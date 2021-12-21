@@ -244,8 +244,8 @@ if  col2.button('Click me'):
                   st.caption("""* cost4: penalty cost for power mismatches caused by extreme events.""")
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
     col3.caption('Choose system needs to schedule')
-    app_model = col3.selectbox('Choose system',
-                           ['Please select system', 'ESS', 'CHP'])
+    #app_model = col3.selectbox('Choose system',
+                           #['Please select system', 'ESS', 'CHP'])
     with col3.expander("See explanation"):
                   st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
          in which:*""")
@@ -253,8 +253,8 @@ if  col2.button('Click me'):
 else:
     col2.write('Loading data....')
 
-#app_model = col3.selectbox('Choose system',
-                           #['Please select system', 'ESS', 'CHP'])
+app_model = col3.selectbox('Choose system',
+                           ['Please select system', 'ESS', 'CHP'])
 if app_model == 'Please select system':
          col3.caption(f"{app_model}")
 elif app_model == 'ESS':
