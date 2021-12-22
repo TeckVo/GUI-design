@@ -245,15 +245,18 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
    
     col3.caption('Choose system needs to schedule')
+    with col3.expander("See explanation"):
+         st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
+         in which:*""")
+         st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
 
 
     #app_model = col3.selectbox('Choose system',
                            #['Please select system', 'ESS', 'CHP'])
          
-     with col3.expander("See explanation"):
-                  st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
-         in which:*""")
-                  st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
+     
+                  
+                  
 else:
     col2.write('Loading data....')
 
