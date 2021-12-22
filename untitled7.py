@@ -253,26 +253,28 @@ if  col2.button('Click me'):
     with col3.expander("See explanation"):
                   st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
          in which:*""")
-                  st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")  
+                  st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
+    if app_model == 'Please select system':
+         col3.caption(f"{app_model}")
+         elif app_model == 'ESS':
+         col3.caption(f"{app_model} system")
+         col3.altair_chart(line_chart_1)
+         with col3.expander("See explanation"):
+                  st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
+     elif app_model == 'CHP':
+         col3.caption(f"{app_model}")
+         col3.altair_chart(line_chart_2)
+         with col3.expander("See explanation"):
+                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")                     
 else:
     col2.write('Loading data....')
 
 #app_model = col3.selectbox('Choose system',
                            #['Please select system', 'ESS', 'CHP'])
-if app_model == 'Please select system':
-         col3.caption(f"{app_model}")
-elif app_model == 'ESS':
-         col3.caption(f"{app_model} system")
-         col3.altair_chart(line_chart_1)
-         with col3.expander("See explanation"):
-                  st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")  
+
+
          
-elif app_model == 'CHP':
-         col3.caption(f"{app_model}")
-         col3.altair_chart(line_chart_2)
-         with col3.expander("See explanation"):
-                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")   
-                    
+
                       
 
                       
