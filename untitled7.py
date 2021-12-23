@@ -36,7 +36,7 @@ image = Image.open(BytesIO(response.content))
 
 
 #image = Image.open('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png')
-col1.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
+st.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
 
 df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Data.csv')
 
