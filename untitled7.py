@@ -139,9 +139,9 @@ def get_user_input():
                   st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
     
 
+    Confidence_level = col2.slider(0.00, 1.00, 0.95)   
          
-         
-    Confidence_level = col2.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
+    #Confidence_level = col2.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
     
          
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
