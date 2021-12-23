@@ -30,8 +30,8 @@ st.write("""
 #Open and display an image 
 url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
 response = requests.get(url)
-col1.image = Image.open(BytesIO(response.content))
-#imge.show()
+image = Image.open(BytesIO(response.content))
+col1.image.show()
 
 
 
