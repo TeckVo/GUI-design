@@ -221,7 +221,7 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort level is defined based on scenario-based stochastic programming method.*""")
                  
     col4.metric('Operating cost', '110.54 $', '-44.04 % compared with baseline 197.54 $')
-    d = {' cost1 [$]': [49.12], ' cost2 [$]': [27.21], ' cost3 [$]': [25.08], 'cost4 [$]': [09.13] }
+    d = {' cost1 [$]': [49.12, 27.21 ], ' cost2 [$]': [27.21, 27.21], ' cost3 [$]': [25.08, 27.21  ], 'cost4 [$]': [09.13, 27.21] }
     df = pd.DataFrame(data=d)
     col4.table(df)
     with col4.expander("Note"):
