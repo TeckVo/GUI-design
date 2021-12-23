@@ -133,9 +133,17 @@ def get_user_input():
          st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
          
     #col2.caption('*"Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid."*')
-    Confidence_level = col2.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
+    
+    col2.subheader('Confidence_level')
     with col2.expander("Note"):
-         st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
+                  st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
+    
+
+         
+         
+    Confidence_level = col2.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
+    
+         
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
     Desired_temp_HVAC = col2.number_input('3. Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 1.00)
     with col2.expander("Note"):
