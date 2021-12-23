@@ -28,9 +28,9 @@ st.write("""
          """)
          
 #Open and display an image 
-url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
-response = requests.get(url)
-image = Image.open(BytesIO(response.content))
+#url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
+#response = requests.get(url)
+#image = Image.open(BytesIO(response.content))
 #image.show()
 
 
@@ -46,12 +46,22 @@ df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_
 
 
 col1, col2  = st.columns([2, 2])
-col1.header('1. Basic data')
+with col1:
+         st.header ('Simulated microgrid')
+         st.caption ('Major components in a simulated microgrid')
+         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
+         
+
+
+
+
+
+
+
+#col1.header('1. Basic data')
 col2.header('2. Input data')
 
-with col1:
-    st.header("A cat")
-    st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
+
 
 col3, col4 = st.columns([2, 2])
 col3.header('3. Scheduling')
