@@ -49,11 +49,14 @@ col1, col2  = st.columns([2, 2])
 col1.header('1. Basic data')
 col2.header('2. Input data')
 
-
+with col1:
+    st.header("A cat")
+    st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
 
 col3, col4 = st.columns([2, 2])
 col3.header('3. Scheduling')
 col4.header('4. Optimal result')
+
 
 
 
