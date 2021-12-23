@@ -41,7 +41,7 @@ st.image(image, caption='Major components in a simulated microgrid',use_column_w
 df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Data.csv')
 
 
-col1, col2, col3, col4 = st.columns([2, 2])
+col1, col2, col3, col4 = st.columns([4, 4])
 col1.header('1. Basic data')
 col2.header('2. Input data')
 
