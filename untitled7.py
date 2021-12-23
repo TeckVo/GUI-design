@@ -42,14 +42,14 @@ df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_
 
 
 col1, col2 = st.columns([2, 2])
-col1.header('Basic data')
-col2.header('Input data')
+col1.header('1. Basic data')
+col2.header('2. Input data')
 
 
 
 col3, col4 = st.columns([2, 2])
-col3.header('Scheduling')
-col4.header('Rewards')
+col3.header('3. Scheduling')
+col4.header('4. Optimal result')
 
 
 
@@ -102,43 +102,21 @@ app_model = col1.selectbox('Choose data',
 if app_model == 'Load demand':
     #col1.caption(f"{app_model}")
     col1.altair_chart(line_chart)
-    with col1.expander("See explanation"):
+    with col1.expander("Note"):
                   st.caption("""*Base load for one year during 365 days [p.u/h].*""")
-
-
-
-
-
-    #col1.line_chart( base_load)
-         
- 
-    #st.write(weekly_data)
 elif app_model == 'Solar irradiance':
     #col1.caption(f"{app_model}")
     col1.altair_chart(line_chart_4)
-    with col1.expander("See explanation"):
+    with col1.expander("Note"):
                   st.caption("""*Solar irradiance data [W/m2] for one year during 8,760 time slots [hour].*""")
-    
-    #def solar_irradiance(nrows):
-        #data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance.csv', nrows=nrows)
-        #return data
-    #solar_data = solar_irradiance(8760)
-    #col1.line_chart(solar_data)
 elif app_model == 'Capacity':
     #col1.caption(f"{app_model}")
     col1.altair_chart(line_chart_3)
-    with col1.expander("See explanation"):
+    with col1.expander("Note"):
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
-    
-    #def output_capacity(nrows):
-        #data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Capacity.csv', nrows=nrows)
-        #return data
-    #capacity_data = output_capacity(8760)
-    #st.line_chart(capacity_data)
-    #col1.area_chart(capacity_data)
-         
-         
-uploaded_files = col1.file_uploader("Upload a new CSV file data", accept_multiple_files=True)
+ 
+
+uploaded_files = col1.file_uploader("Upload a new CSV file data", accept_multiple_files=True)               
 for uploaded_file in uploaded_files:
      bytes_data = uploaded_file.read()
      st.write("filename:", uploaded_file.name)
@@ -151,22 +129,22 @@ def get_user_input():
     defaultMin = time(10,00)
     defaultMax = time(11,00)
     Interruption_time = col2.slider('1. Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
-    with col2.expander("See explanation"):
+    with col2.expander("Note"):
          st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
          
     #col2.caption('*"Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid."*')
-    with col2.expander("Note +"):
+    with col2.expander("Note"):
          st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
     Confidence_level = col2.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
-    #with col2.expander("Note +"):
+    #with col2.expander("Note"):
          #st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
     Desired_temp_HVAC = col2.number_input('3. Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 1.00)
-    with col2.expander("See explanation"):
+    with col2.expander("Note"):
          st.caption("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
     Desired_temp_EWH = col2.number_input('4. Desired_temp_EWH [°C]', 30.00, 70.00, 50.00, 1.00)
-    with col2.expander("See explanation"):
+    with col2.expander("Note"):
          st.caption("""*Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
     #Interruption_time = col2.time_input('Interruption_time')
@@ -229,7 +207,7 @@ if  col2.button('Click me'):
     #RandomForestClassifier = RandomForestClassifier()
     #RandomForestClassifier.fit(X_train, Y_train)
     col4.metric('Comfort level', '99.98 %', '5.09 % compared with baseline 94.89 %')
-    with col4.expander("See explanation"):
+    with col4.expander("Note"):
                   st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
                   such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort level is defined based on scenario-based stochastic programming method.*""")
@@ -238,7 +216,7 @@ if  col2.button('Click me'):
     d = {' cost1 [$]': [49.12], ' cost2 [$]': [27.21], ' cost3 [$]': [25.08], 'cost4 [$]': [09.13] }
     df = pd.DataFrame(data=d)
     col4.table(df)
-    with col4.expander("See explanation"):
+    with col4.expander("Note"):
                   st.caption("""*1. Total operating cost of microgrid consists the following cost components:*""")
                   st.caption("""* cost1: power purchase cost from the main gird;""")
                   st.caption("""* cost2: degradation cost of energy storage systems (ESSs);""")
@@ -247,7 +225,7 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
    
     col3.caption('Choose system needs to schedule')
-    with col3.expander("See explanation"):
+    with col3.expander("Note"):
          st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
          in which:*""")
          st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
@@ -269,12 +247,12 @@ if app_model == 'Please select system':
 elif app_model == 'ESS':
          col3.caption(f"{app_model} system")
          col3.altair_chart(line_chart_1)
-         with col3.expander("See explanation"):
+         with col3.expander("Note"):
                   st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
 elif app_model == 'CHP':
          col3.caption(f"{app_model}")
          col3.altair_chart(line_chart_2)
-         with col3.expander("See explanation"):
+         with col3.expander("Note"):
                   st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""") 
          
          
