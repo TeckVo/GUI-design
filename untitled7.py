@@ -221,7 +221,7 @@ if  col2.button('Click me'):
                   st.caption ("""*2. Baseline comfort level is defined based on scenario-based stochastic programming method.*""")
                  
     col4.metric('Operating cost', '110.54 $', '-44.04 % compared with baseline 197.54 $')
-    d = {' cost1 [$]': [49.12, 27.21 ], ' cost2 [$]': [27.21, 27.21], ' cost3 [$]': [25.08, 27.21  ], 'cost4 [$]': [09.13, 27.21] }
+    d = {' cost1 [$]': [49.12, 72.68 ], ' cost2 [$]': [27.21, 45.25], ' cost3 [$]': [25.08, 50.66], 'cost4 [$]': [09.13, 28.95] }
     df = pd.DataFrame(data=d)
     col4.table(df)
     with col4.expander("Note"):
@@ -230,6 +230,8 @@ if  col2.button('Click me'):
                   st.caption("""* cost2: degradation cost of energy storage systems (ESSs);""")
                   st.caption("""* cost3: operating cost of gas-combined heat and power systems (CHPs);""")
                   st.caption("""* cost4: penalty cost for power mismatches caused by extreme events.""")
+                  st.caption("""* Row 0: Optimal result.""")
+                  st.caption("""* Row 1: Baseline.""")
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
    
     col3.caption('Choose system needs to schedule')
