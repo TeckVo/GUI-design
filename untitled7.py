@@ -47,7 +47,7 @@ col2.header('2. Input data')
 
 
 
-col4 = st.columns([2, 2])
+col4 = st.columns(1)
 col3.header('3. Scheduling')
 col4.header('4. Optimal result')
 
