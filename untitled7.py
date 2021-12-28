@@ -243,31 +243,36 @@ if  col4.button('Run'):
          st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
          in which:*""")
          st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
-
-
-    #app_model = col3.selectbox('Choose system',
-                           #['Please select system', 'ESS', 'CHP'])
-         
-     
-                  
-                  
-else:
-    col2.write('Loading data....')
-
-app_model = col3.selectbox('Choose system',
-                           ['Please select system', 'ESS', 'CHP'])
-if app_model == 'Please select system':
+    col3.altair_chart(line_chart_1)
+    app_model = col3.selectbox('Choose system',
+                           ['Energy storage system', 'Gas-combined heat and power system'])
+    if app_model == 'Energy storage system':
          col3.caption(f"{app_model}")
-elif app_model == 'ESS':
-         col3.caption(f"{app_model} system")
          col3.altair_chart(line_chart_1)
          with col3.expander("Note"):
                   st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
-elif app_model == 'CHP':
+    elif app_model == 'Gas-combined heat and power system':
          col3.caption(f"{app_model}")
          col3.altair_chart(line_chart_2)
          with col3.expander("Note"):
-                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""") 
+                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")               
+else:
+    col4.write('Loading data....')
+
+#app_model = col3.selectbox('Choose system',
+                           #['Please select system', 'ESS', 'CHP'])
+#if app_model == 'Please select system':
+         #col3.caption(f"{app_model}")
+#elif app_model == 'ESS':
+         #col3.caption(f"{app_model} system")
+         #col3.altair_chart(line_chart_1)
+         #with col3.expander("Note"):
+                  #st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
+#elif app_model == 'CHP':
+         #col3.caption(f"{app_model}")
+         #col3.altair_chart(line_chart_2)
+         #with col3.expander("Note"):
+                  #st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""") 
          
          
 
