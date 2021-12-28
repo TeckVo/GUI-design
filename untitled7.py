@@ -293,7 +293,7 @@ else:
          #col3.caption(f"{app_model}")
          #col3.altair_chart(line_chart_2)
          #with col3.expander("Note"):
-                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
+                  #st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
 
          
 
