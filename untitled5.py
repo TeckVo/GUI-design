@@ -39,7 +39,7 @@ st.image(image, caption='Major components in a simulated microgrid',use_column_w
 df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Data.csv')
 
 
-
+st.sidebar.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
 
 
 
