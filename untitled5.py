@@ -65,7 +65,7 @@ df_1 = df_1.reset_index().melt('x', var_name='Load', value_name='y')
 line_chart = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [day]'),
     alt.Y('y', title='Base load [p.u]'),
-    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=150, height=200)
+    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=300, height=300)
 
 
 def capacity_data(nrows):
@@ -78,7 +78,7 @@ df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
 line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Output power [Kw/h]'),
-         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=150, height=200)
+         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=300, height=300)
 
 def solar_data(nrows):
          data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance%20data.csv',nrows=nrows)
@@ -90,7 +90,7 @@ df_4 = df_4.reset_index().melt('x', var_name='Solar irradiance', value_name='y')
 line_chart_4 = alt.Chart(df_4).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Solar irradiance [W/m2]'),
-         color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=150, height=200)
+         color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=300, height=300)
         
     
 app_model = col2.selectbox('Choose data',
@@ -109,7 +109,7 @@ elif app_model == 'Capacity':
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
  
 
-uploaded_files = col2.file_uploader("Upload a new CSV file data", accept_multiple_files=True)               
+uploaded_files = col1.file_uploader("Upload a new CSV file data", accept_multiple_files=True)               
 for uploaded_file in uploaded_files:
      bytes_data = uploaded_file.read()
      st.write("filename:", uploaded_file.name)
