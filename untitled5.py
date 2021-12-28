@@ -118,9 +118,9 @@ def get_user_input():
     maxTime = time(23,00)
     defaultMin = time(10,00)
     defaultMax = time(11,00)
-    Interruption_time = st.sidebar.slider("""*Interruption_time [H]*""", min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
-    #with st.sidebar.expander("Note"):
-         #st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
+    Interruption_time = st.sidebar.slider('1. Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
+    with sidebar.expander("Note"):
+         st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
          
     Confidence_level = st.sidebar.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
     #with sidebar.expander("Note"):
