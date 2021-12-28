@@ -222,9 +222,12 @@ if  col4.button('Run'):
                   st.caption ("""*2. Baseline comfort level is defined based on scenario-based stochastic programming method.*""")
                  
     col4.metric('Operating cost', '110.54 $', '-44.04 % compared with baseline 197.54 $')
-    d = {' cost1 [$]': [49.12, 72.68 ], ' cost2 [$]': [27.21, 45.25], ' cost3 [$]': [25.08, 50.66], 'cost4 [$]': [09.13, 28.95] }
-    df = pd.DataFrame(data=d)
-    col4.table(df)
+    #d = {' cost1 [$]': [49.12, 72.68 ], ' cost2 [$]': [27.21, 45.25], ' cost3 [$]': [25.08, 50.66], 'cost4 [$]': [09.13, 28.95] }
+    #df = pd.DataFrame(data=d)
+    #col4.table(df)
+    with col4:
+         col4.image('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture2.png')
+         
     with col4.expander("Note"):
                   st.caption("""*1. Total operating cost of microgrid consists the following cost components:*""")
                   st.caption("""* cost1: power purchase cost from the main gird;""")
