@@ -60,8 +60,11 @@ col1.subheader('2. Basic data')
 col2.subheader('3. Scheduling')
 col3.subheader('4. Optimal result')
 
-
-
+c1, c2, c3, c4 = st.beta_columns((2, 1, 1, 1))
+c1.header("Original")
+c2.header("Original")
+c3.header("Original")
+c4.header("Original")
 
 def base_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
