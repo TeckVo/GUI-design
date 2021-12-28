@@ -241,7 +241,7 @@ if  col4.button('Run'):
     col3.altair_chart(line_chart_1)
     with col3.expander("Note"):
                   st.caption("""*Discharging power amount [MW] of each energy storage system (ESS) to enhance the microgrid resilience during the islanding period.*""")
- else:
+else:
     col4.write('Loading result....')
 app_model = col3.selectbox('Choose other system', ['Select system','CHP'])
 if app_model == 'Select system':
