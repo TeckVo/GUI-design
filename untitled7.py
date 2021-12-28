@@ -237,8 +237,7 @@ if  col4.button('Run'):
                   st.caption("""* Row 0: Optimal result.""")
                   st.caption("""* Row 1: Baseline.""")
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
-    app_model = col3.selectbox('Choose system',
-                           ['Select system', 'Energy storage system (ESS)', 'Gas-combined heat and power system (CHP)'])
+    
     #col3.altair_chart(line_chart_1)
     #with col3.expander("Note"):
                   #st.caption("""*Discharging power amount [MW] of each energy storage system (ESS) to enhance the microgrid resilience during the islanding period.*""")
@@ -274,12 +273,12 @@ else:
 
 
 
-    #app_model = col3.selectbox('Choose system',
+    app_model = col3.selectbox('Choose system',
                            #['Select system', 'Energy storage system (ESS)', 'Gas-combined heat and power system (CHP)'])
-    #with col3.expander("Note"):
-         #st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
-         #in which:*""")
-         #st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
+    with col3.expander("Note"):
+         st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
+         in which:*""")
+         st.caption("""*ESS denotes the energy storage system and CHP is the gas-combined heat and power system.*""")
     if app_model == 'Select system':
          with col3.expander("Note"):
                   st.caption("""*Selecting system needs to schedule for reacting to the extreme events in which:*""")
