@@ -199,34 +199,34 @@ if  sidebar.button('Run'):
     #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=0, test_size=0.25)
     #RandomForestClassifier = RandomForestClassifier()
     #RandomForestClassifier.fit(X_train, Y_train)
-    col4.metric('Comfort level', '99.98 %', '5.09 % compared with baseline 94.89 %')
+    col3.metric('Comfort level', '99.98 %', '5.09 % compared with baseline 94.89 %')
     with col4.expander("Note"):
                   st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
                   such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort level is defined based on scenario-based stochastic programming method.*""")
                  
-    col4.metric('Operating cost', '110.54 $', '-44.04 % compared with baseline 197.54 $')
+    col3.metric('Operating cost', '110.54 $', '-44.04 % compared with baseline 197.54 $')
     #d = {' cost1 [$]': [49.12, 72.68 ], ' cost2 [$]': [27.21, 45.25], ' cost3 [$]': [25.08, 50.66], 'cost4 [$]': [09.13, 28.95] }
     #df = pd.DataFrame(data=d)
     #col4.table(df)
-    with col4:
-         col4.image('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture2.png')
+    with col3:
+         col3.image('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture2.png')
          
-    with col4.expander("Note"):
+    with col3.expander("Note"):
                   st.caption("""*1. Total operating cost of microgrid consists the following cost components:*""")
                   st.caption("""* cost1: power purchase cost from the main gird;""")
                   st.caption("""* cost2: degradation cost of energy storage systems (ESSs);""")
                   st.caption("""* cost3: operating cost of gas-combined heat and power systems (CHPs);""")
                   st.caption("""* cost4: penalty cost for power mismatches caused by extreme events.""")
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
-    col3.altair_chart(line_chart_1)
-    with col3.expander("Note"):
+    col2.altair_chart(line_chart_1)
+    with col2.expander("Note"):
                   st.caption("""*Discharging power amount [MW] of each energy storage system (ESS) to enhance the microgrid resilience during the islanding period.*""")
-    col3.altair_chart(line_chart_2)
-    with col3.expander("Note"):
+    col2.altair_chart(line_chart_2)
+    with col2.expander("Note"):
                   st.caption("""*Discharging power amount [MW] of each gas-combined heat and power system (CHP) to enhance the microgrid resilience during the islanding period.*""")
                
                       
 else:
-    col4.write('Loading result....')
+    col2.write('Loading result....')
     col3.write('Loading result....')
