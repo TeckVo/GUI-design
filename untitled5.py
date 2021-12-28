@@ -45,11 +45,15 @@ df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_
 
 col4, col5 = st.columns(2)
 with col4:
-         st.subheader("Simulated microgrid structure")
+         st.subheader("Microgrid structure")
          st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
 with col5:
          st.subheader("Optimization framework")
-         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
+         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture3.png")
+         
+         
+   
+      
          
 col1, col2, col3 = st.columns(3)
 col1.subheader('2. Basic data')
