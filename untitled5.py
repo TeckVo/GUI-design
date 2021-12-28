@@ -45,7 +45,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_
 
 col1, col2, col3 = st.columns(3)
 col1.subheader('2. Basic data')
-col2.subheader('3. Scheduling result')
+col2.subheader('3. Scheduling')
 col3.subheader('4. Optimal result')
 
 
@@ -61,7 +61,7 @@ df_1 = df_1.reset_index().melt('x', var_name='Load', value_name='y')
 line_chart = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [day]'),
     alt.Y('y', title='Base load [p.u]'),
-    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=300, height=300)
+    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=200, height=200)
 
 
 def capacity_data(nrows):
@@ -74,7 +74,7 @@ df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
 line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Output power [Kw/h]'),
-         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=300, height=300)
+         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=200, height=200)
 
 def solar_data(nrows):
          data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance%20data.csv',nrows=nrows)
@@ -86,22 +86,22 @@ df_4 = df_4.reset_index().melt('x', var_name='Solar irradiance', value_name='y')
 line_chart_4 = alt.Chart(df_4).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Solar irradiance [W/m2]'),
-         color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=300, height=300)
+         color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=200, height=200)
         
     
-app_model = col2.selectbox('Choose data',
+app_model = col1.selectbox('Choose data',
                                ['Load demand', 'Capacity', 'Solar irradiance'])
 if app_model == 'Load demand':
-    col2.altair_chart(line_chart)
-    with col2.expander("Note"):
+    col1.altair_chart(line_chart)
+    with col1.expander("Note"):
                   st.caption("""*Base load for one year during 365 days [p.u/h].*""")
 elif app_model == 'Solar irradiance':
-    col2.altair_chart(line_chart_4)
-    with col2.expander("Note"):
+    col1.altair_chart(line_chart_4)
+    with col1.expander("Note"):
                   st.caption("""*Solar irradiance data [W/m2] for one year during 8,760 time slots [hour].*""")
 elif app_model == 'Capacity':
-    col2.altair_chart(line_chart_3)
-    with col2.expander("Note"):
+    col1.altair_chart(line_chart_3)
+    with col1.expander("Note"):
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
  
 
