@@ -64,7 +64,7 @@ df_1 = df_1.reset_index().melt('x', var_name='Load', value_name='y')
 line_chart = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [day]'),
     alt.Y('y', title='Base load [p.u]'),
-    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=300, height=300)
+    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=100, height=100)
 
 
 def capacity_data(nrows):
@@ -77,7 +77,7 @@ df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
 line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Output power [Kw/h]'),
-         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=300, height=300)
+         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=100, height=100)
 
 def solar_data(nrows):
          data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance%20data.csv',nrows=nrows)
