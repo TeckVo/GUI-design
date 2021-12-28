@@ -193,7 +193,7 @@ line_chart_2 = alt.Chart(df_2).mark_line().encode(
 #col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
               
         
-if  sidebar.button('Run'):
+if  st.sidebar.button('Run'):
     #X = df.iloc[:, 0:8].values 
     #Y = df.iloc[:, -1].values 
     #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=0, test_size=0.25)
