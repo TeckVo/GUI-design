@@ -74,7 +74,7 @@ df_2 = df_2.reset_index().melt('x', var_name='Output', value_name='y')
 line_chart_3 = alt.Chart(df_2).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Output power [Kw/h]'),
-         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=300, height=200)
+         color=alt.Color('Output:N', legend=alt.Legend(orient='bottom'))).properties(title='Output power from solar panel system', width=250, height=200)
 
 def solar_data(nrows):
          data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Solar%20irradiance%20data.csv',nrows=nrows)
@@ -86,7 +86,7 @@ df_4 = df_4.reset_index().melt('x', var_name='Solar irradiance', value_name='y')
 line_chart_4 = alt.Chart(df_4).mark_line().encode(
          alt.X('x', title='Time slot [hour]'),
          alt.Y('y', title='Solar irradiance [W/m2]'),
-         color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=300, height=200)
+         color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=250, height=200)
         
     
 app_model = col1.selectbox('Choose data',
