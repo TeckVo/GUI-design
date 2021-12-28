@@ -237,8 +237,7 @@ if  col4.button('Run'):
                   st.caption("""* Row 0: Optimal result.""")
                   st.caption("""* Row 1: Baseline.""")
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
-    
-    col3.write('Selecting system needs to schedule '):
+    col3.write('Selecting system needs to schedule')
                
                       
 else:
