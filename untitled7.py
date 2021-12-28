@@ -243,16 +243,25 @@ if  col4.button('Run'):
 else:
     col4.write('Loading result....')
     
-app_model = col3.selectbox('Choose system',
+         app_model = col3.selectbox('Choose system',
                            ['Select system', 'Energy storage system (ESS)', 'Gas-combined heat and power system (CHP)'])
-if app_model == 'Select system':
-          col3.write('Loading result....')
-elif app_model == 'Energy storage system':
-         col3.caption(f"{app_model}")
-         col3.altair_chart(line_chart_1)
-         with col3.expander("Note"):
-                  st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
-elif app_model == 'Gas-combined heat and power system':
+         if app_model == 'Select system':
+                   col3.write('Loading result....')
+         elif app_model == 'Energy storage system':
+                   col3.caption(f"{app_model}")
+                   col3.altair_chart(line_chart_1)
+                   with col3.expander("Note"):
+                                    st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
+         elif app_model == 'Gas-combined heat and power system':
+                           
+
+         
+
+        
+         
+         
+                  
+
          col3.caption(f"{app_model}")
          col3.altair_chart(line_chart_2)
          with col3.expander("Note"):
