@@ -150,9 +150,9 @@ def get_user_input():
     Desired_temp_EWH = st.sidebar.number_input('4. Desired_temp_EWH [°C]', 30.00, 70.00, 50.00, 1.00)
     with st.sidebar.expander("Note"):
          st.caption("""*Interruption_time: Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
-         st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
-         st.caption("""*Desired_temp_HVAC: desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
-         st.caption("""* Desired_temp_EWH: desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
+         st.caption("""*Confidence level: Value in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
+         st.caption("""*Desired_temp_HVAC: Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
+         st.caption("""*Desired_temp_EWH: Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
     #Interruption_time = col2.time_input('Interruption_time')
     #Desired_temp_HVAC = col2.selectbox('Desired_temp_HVAC [°C]',['select', 18, 20, 22, 24, 26, 28, 30, 32])
