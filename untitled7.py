@@ -274,7 +274,7 @@ else:
 
 
     app_model = col3.selectbox('Choose system',
-                           #['Select system', 'Energy storage system (ESS)', 'Gas-combined heat and power system (CHP)'])
+                           ['Select system', 'Energy storage system (ESS)', 'Gas-combined heat and power system (CHP)'])
     with col3.expander("Note"):
          st.caption("""*Selecting system needs to schedule for reacting to the extreme events 
          in which:*""")
