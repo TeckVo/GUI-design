@@ -244,7 +244,8 @@ if  col4.button('Run'):
     #col3.altair_chart(line_chart_2)
     #with col3.expander("Note"):
                   #st.caption("""*Discharging power amount [MW] of each gas-combined heat and power system (CHP) to enhance the microgrid resilience during the islanding period.*""")
-    
+    app_model = col3.selectbox('Choose other system',
+                           ['Select system','CHP'])
      
                
      
@@ -273,9 +274,9 @@ if  col4.button('Run'):
          #with col3.expander("Note"):
                   #st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")               
 else:
-    col4.write('Loading data....')
+    col4.write('Loading result....')
 
-app_model = col3.selectbox('Choose other system',
+app_model = col3.selectbox('Choose system',
                            ['Select system','CHP'])
 if app_model == 'Select system':
           col3.write('Loading result....') 
