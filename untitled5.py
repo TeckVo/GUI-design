@@ -112,7 +112,7 @@ for uploaded_file in uploaded_files:
      st.write(bytes_data)
 
 def get_user_input():
-    st.sidebar.header('1. Input data')
+    st.sidebar.title('1. Input data')
     minTime = time(00,00)
     maxTime = time(23,00)
     defaultMin = time(10,00)
@@ -200,7 +200,7 @@ if  st.sidebar.button('Run'):
     #RandomForestClassifier = RandomForestClassifier()
     #RandomForestClassifier.fit(X_train, Y_train)
     col3.metric('Comfort level', '99.98 %', '5.09 % compared with baseline 94.89 %')
-    with col4.expander("Note"):
+    with col3.expander("Note"):
                   st.caption("""*1. Comfort level indicates the ability to continously supply power to critical loads, 
                   such as HVAC and EWH systems during the islanding microgrid period caused by extreme events.*""")
                   st.caption ("""*2. Baseline comfort level is defined based on scenario-based stochastic programming method.*""")
