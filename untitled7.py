@@ -257,7 +257,7 @@ elif app_model == 'Gas-combined heat and power system':
          col3.altair_chart(line_chart_2)
          with col3.expander("Note"):
                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")       
- col3.altair_chart(line_chart_2)
+col3.altair_chart(line_chart_2)
     
         
     
