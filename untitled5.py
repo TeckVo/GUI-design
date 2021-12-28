@@ -109,7 +109,7 @@ elif app_model == 'Capacity':
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
  
 
-uploaded_files = col1.file_uploader("Upload a new CSV file data", accept_multiple_files=True)               
+uploaded_files = col1.file_uploader("Upload a new basic data CSV file", accept_multiple_files=True)               
 for uploaded_file in uploaded_files:
      bytes_data = uploaded_file.read()
      st.write("filename:", uploaded_file.name)
@@ -126,7 +126,7 @@ def get_user_input():
          st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
          
     Confidence_level = st.sidebar.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
-    with col2.expander("Note"):
+    with sidebar.expander("Note"):
           st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
     
 
@@ -137,11 +137,11 @@ def get_user_input():
          
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
     Desired_temp_HVAC = st.sidebar.number_input('3. Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 1.00)
-    with col2.expander("Note"):
+    with sidebar.expander("Note"):
          st.caption("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
     Desired_temp_EWH = st.sidebar.number_input('4. Desired_temp_EWH [°C]', 30.00, 70.00, 50.00, 1.00)
-    with col2.expander("Note"):
+    with sidebar.expander("Note"):
          st.caption("""*Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
     #Interruption_time = col2.time_input('Interruption_time')
@@ -197,7 +197,7 @@ line_chart_2 = alt.Chart(df_2).mark_line().encode(
 #col2.caption('*"Selecting system needs to schedule for reacting to the extreme events."*')
               
         
-if  col2.button('Run'):
+if  sidebar.button('Run'):
     #X = df.iloc[:, 0:8].values 
     #Y = df.iloc[:, -1].values 
     #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=0, test_size=0.25)
