@@ -129,8 +129,8 @@ def get_user_input():
     defaultMin = time(10,00)
     defaultMax = time(16,00)
     Interruption_time = st.sidebar.slider('1. Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
-    with st.sidebar.expander("Note"):
-         st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
+    #with st.sidebar.expander("Note"):
+         #st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
          
     Confidence_level = st.sidebar.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
     #with sidebar.expander("Note"):
@@ -144,12 +144,15 @@ def get_user_input():
          
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
     Desired_temp_HVAC = st.sidebar.number_input('3. Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 1.00)
-    with st.sidebar.expander("Note"):
-         st.caption("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
+    #with st.sidebar.expander("Note"):
+         #st.caption("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
     Desired_temp_EWH = st.sidebar.number_input('4. Desired_temp_EWH [°C]', 30.00, 70.00, 50.00, 1.00)
     with st.sidebar.expander("Note"):
-         st.caption("""*Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
+         st.caption("""*Interruption_time: Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
+         st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
+         st.caption("""*Desired_temp_HVAC: desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
+         st.caption("""* Desired_temp_EWH: desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
     #Interruption_time = col2.time_input('Interruption_time')
     #Desired_temp_HVAC = col2.selectbox('Desired_temp_HVAC [°C]',['select', 18, 20, 22, 24, 26, 28, 30, 32])
