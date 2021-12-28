@@ -28,9 +28,9 @@ st.write("""
          """)
          
 #Open and display an image 
-url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
-response = requests.get(url)
-image = Image.open(BytesIO(response.content))
+#url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
+#response = requests.get(url)
+#image = Image.open(BytesIO(response.content))
 #image.show()
 
 
@@ -48,6 +48,8 @@ df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_
 col1, col2 = st.columns([2,2])
 col3, col4 = st.columns([2,2])
 col1.header('1. Microgrid structure')
+with col1:
+         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
 col2.header('2. Optimal result')
 col3.header('3. Basic data')
 col4.header('4. Scheduling result')
