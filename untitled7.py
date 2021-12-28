@@ -237,13 +237,14 @@ if  col4.button('Run'):
                   st.caption("""* Row 0: Optimal result.""")
                   st.caption("""* Row 1: Baseline.""")
                   st.caption ("""*2. Baseline total operating cost is defined based on scenario-based stochastic programming method.*""")
-     col3.altair_chart(line_chart_1)
-     with col3.expander("Note"):
-                  st.caption("""*Discharging power amount [MW] of each energy storage system (ESS) to enhance the microgrid resilience during the islanding period.*""")
+     #col3.altair_chart(line_chart_1)
+     #with col3.expander("Note"):
+                  #st.caption("""*Discharging power amount [MW] of each energy storage system (ESS) to enhance the microgrid resilience during the islanding period.*""")
                   
      col3.altair_chart(line_chart_2)
-     with col3.expander("Note"):
-                  st.caption("""*Discharging power amount [MW] of each gas-combined heat and power system (CHP) to enhance the microgrid resilience during the islanding period.*""")
+     col3.altair_chart(line_chart_1)
+     #with col3.expander("Note"):
+                  #st.caption("""*Discharging power amount [MW] of each gas-combined heat and power system (CHP) to enhance the microgrid resilience during the islanding period.*""")
      
 
 
