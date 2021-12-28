@@ -64,7 +64,7 @@ df_1 = df_1.reset_index().melt('x', var_name='Load', value_name='y')
 line_chart = alt.Chart(df_1).mark_line().encode(
     alt.X('x', title='Time slot [day]'),
     alt.Y('y', title='Base load [p.u]'),
-    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=200, height=200)
+    color=alt.Color('Load:N', legend=alt.Legend(orient='bottom'))).properties(title='Load demand', width=150, height=200)
 
 
 def capacity_data(nrows):
