@@ -1,8 +1,6 @@
 4# -*- coding: utf-8 -*-
 """
-Created on Thu Dec 16 20:34:06 2021
 
-@author: Cu Chi
 """
 
 #Import the libraries
@@ -50,9 +48,9 @@ col3, col4 = st.columns([2,2])
 col1.header('1. Microgrid structure')
 with col1:
          st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
-col2.header('2. Optimal result')
-col3.header('3. Basic data')
-col4.header('4. Scheduling result')
+col2.header('2. Basic data')
+col3.header('3. Scheduling result')
+col4.header('4. Optimal result')
 
 
 
@@ -95,23 +93,23 @@ line_chart_4 = alt.Chart(df_4).mark_line().encode(
          color=alt.Color('Solar irradiance:N', legend=alt.Legend(orient='bottom'))).properties(title='Solar irradiance data during one year', width=150, height=200)
         
     
-app_model = col3.selectbox('Choose data',
+app_model = col2.selectbox('Choose data',
                                ['Load demand', 'Capacity', 'Solar irradiance'])
 if app_model == 'Load demand':
-    col3.altair_chart(line_chart)
-    with col3.expander("Note"):
+    col2.altair_chart(line_chart)
+    with col2.expander("Note"):
                   st.caption("""*Base load for one year during 365 days [p.u/h].*""")
 elif app_model == 'Solar irradiance':
-    col3.altair_chart(line_chart_4)
-    with col3.expander("Note"):
+    col2.altair_chart(line_chart_4)
+    with col2.expander("Note"):
                   st.caption("""*Solar irradiance data [W/m2] for one year during 8,760 time slots [hour].*""")
 elif app_model == 'Capacity':
-    col3.altair_chart(line_chart_3)
-    with col3.expander("Note"):
+    col2.altair_chart(line_chart_3)
+    with col2.expander("Note"):
                   st.caption("""*Outout power [KW/h] of a roof-top solar panel with installed capacity 6MW for one year during 8,760 time slots [hour].*""")
  
 
-uploaded_files = col3.file_uploader("Upload a new CSV file data", accept_multiple_files=True)               
+uploaded_files = col2.file_uploader("Upload a new CSV file data", accept_multiple_files=True)               
 for uploaded_file in uploaded_files:
      bytes_data = uploaded_file.read()
      st.write("filename:", uploaded_file.name)
@@ -123,11 +121,11 @@ def get_user_input():
     maxTime = time(23,00)
     defaultMin = time(10,00)
     defaultMax = time(11,00)
-    Interruption_time = col2.slider('1. Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
+    Interruption_time = st.sidebar.slider('1. Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
     with sidebar.expander("Note"):
          st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
          
-    Confidence_level = sidebar.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
+    Confidence_level = st.sidebar.slider('2. Confidence_level [%]', 0.00, 1.00, 0.95) 
     with col2.expander("Note"):
           st.caption("""*Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties.*""")
     
@@ -138,11 +136,11 @@ def get_user_input():
     
          
     #col2.caption('*"Confidence level in [0; 1] to denote the decision maker attitude in dealing with uncertainties."*')
-    Desired_temp_HVAC = col2.number_input('3. Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 1.00)
+    Desired_temp_HVAC = st.sidebar.number_input('3. Desired_temp_HVAC [°C]',18.00, 36.00, 26.00, 1.00)
     with col2.expander("Note"):
          st.caption("""*Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of HVAC system in [18°C; 36°C] during during the microgrid islanding period."*')
-    Desired_temp_EWH = col2.number_input('4. Desired_temp_EWH [°C]', 30.00, 70.00, 50.00, 1.00)
+    Desired_temp_EWH = st.sidebar.number_input('4. Desired_temp_EWH [°C]', 30.00, 70.00, 50.00, 1.00)
     with col2.expander("Note"):
          st.caption("""*Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period.*""")
     #col2.caption('*"Desired temperature (°C) of EWH system in [30°C; 70°C] during during the microgrid islanding period."*')
