@@ -60,11 +60,7 @@ col1.subheader('2. Basic data')
 col2.subheader('3. Scheduling')
 col3.subheader('4. Optimal result')
 
-c1, c2, c3, c4 = st.beta_columns((2, 1, 1, 1))
-c1.header("Original")
-c2.header("Original")
-c3.header("Original")
-c4.header("Original")
+
 
 def base_data(nrows):
      data = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Base%20load.csv', nrows=nrows)
@@ -131,7 +127,7 @@ def get_user_input():
     minTime = time(00,00)
     maxTime = time(23,00)
     defaultMin = time(10,00)
-    defaultMax = time(11,00)
+    defaultMax = time(16,00)
     Interruption_time = st.sidebar.slider('1. Interruption_time [H]', min_value=minTime, max_value=maxTime,value=(defaultMin, defaultMax), format="LT")
     with st.sidebar.expander("Note"):
          st.caption("""*Start and end time of an extreme event that as the extreme event that makes the microgrid unable to buy power from the main grid.*""")
