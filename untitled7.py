@@ -241,9 +241,9 @@ if  col4.button('Run'):
     col3.altair_chart(line_chart_1)
     with col3.expander("Note"):
                   st.caption("""*Discharging power amount [MW] of each energy storage system (ESS) to enhance the microgrid resilience during the islanding period.*""")
-    col3.altair_chart(line_chart_2)
-    with col3.expander("Note"):
-                  st.caption("""*Discharging power amount [MW] of each gas-combined heat and power system (CHP) to enhance the microgrid resilience during the islanding period.*""")
+    #col3.altair_chart(line_chart_2)
+    #with col3.expander("Note"):
+                  #st.caption("""*Discharging power amount [MW] of each gas-combined heat and power system (CHP) to enhance the microgrid resilience during the islanding period.*""")
     
      
                
@@ -275,20 +275,22 @@ if  col4.button('Run'):
 else:
     col4.write('Loading data....')
 
-#app_model = col3.selectbox('Choose system',
-                           #['Please select system', 'ESS', 'CHP'])
+app_model = col3.selectbox('Choose system',
+                           ['CHP'])
 #if app_model == 'Please select system':
          #col3.caption(f"{app_model}")
-#elif app_model == 'ESS':
+#if app_model == 'CHP':
          #col3.caption(f"{app_model} system")
          #col3.altair_chart(line_chart_1)
          #with col3.expander("Note"):
                   #st.caption("""*Discharging power amount [MW] of each ESS to enhance the microgrid resilience during the islanding period.*""")
-#elif app_model == 'CHP':
-         #col3.caption(f"{app_model}")
-         #col3.altair_chart(line_chart_2)
-         #with col3.expander("Note"):
-                  #st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""") 
+if app_model == 'CHP':
+         col3.caption(f"{app_model}")
+         col3.altair_chart(line_chart_2)
+         with col3.expander("Note"):
+                  st.caption("""*Discharging power amount [MW] of each CHP to enhance the microgrid resilience during the islanding period.*""")
+else:
+        col3.write('Loading result....') 
          
          
 
