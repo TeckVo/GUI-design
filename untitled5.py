@@ -27,15 +27,15 @@ st.write("""
          
 #st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
 #Open and display an image 
-url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
-response = requests.get(url)
-image = Image.open(BytesIO(response.content))
+#url = 'https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png'
+#response = requests.get(url)
+#image = Image.open(BytesIO(response.content))
 #image.show()
 
 
 
 #image = Image.open('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png')
-st.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
+#st.image(image, caption='Major components in a simulated microgrid',use_column_width=True)
 
 df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_set/Data.csv')
 
@@ -43,7 +43,14 @@ df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_
 #st.sidebar.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
 
 
-
+col4, col5 = st.columns(2)
+with col4:
+         st.subheader("Simulated microgrid structure")
+         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
+with col5:
+         st.subheader("Optimization framework")
+         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
+         
 col1, col2, col3 = st.columns(3)
 col1.subheader('2. Basic data')
 col2.subheader('3. Scheduling')
