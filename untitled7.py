@@ -281,7 +281,7 @@ else:
     col4.write('Loading result....')
 
 #app_model = col3.selectbox('Choose system',
-                           ['Select system','CHP'])
+                           #['Select system','CHP'])
 #if app_model == 'Select system':
           #col3.write('Loading result....') 
 #if app_model == 'CHP':
