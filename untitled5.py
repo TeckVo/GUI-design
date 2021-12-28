@@ -55,7 +55,7 @@ with col5:
    
       
          
-col1, col2, col3 = st.columns([3, 1, 2])
+col1, col2, col3 = st.columns(3)
 col1.subheader('2. Basic data')
 col2.subheader('3. Scheduling')
 col3.subheader('4. Optimal result')
