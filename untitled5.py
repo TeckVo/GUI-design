@@ -44,9 +44,9 @@ df = pd.read_csv('https://raw.githubusercontent.com/TeckVo/GUI-design/main/Data_
 
 
 col1, col2, col3 = st.columns(3)
-col2.header('2. Basic data')
-col3.header('3. Scheduling result')
-col4.header('4. Optimal result')
+col1.header('2. Basic data')
+col2.header('3. Scheduling result')
+col3.header('4. Optimal result')
 
 
 
