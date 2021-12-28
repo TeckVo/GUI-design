@@ -112,7 +112,7 @@ for uploaded_file in uploaded_files:
      st.write(bytes_data)
 
 def get_user_input():
-    #st.sidebar.header('Customized input data')
+    st.sidebar.subheader('1. Input data')
     minTime = time(00,00)
     maxTime = time(23,00)
     defaultMin = time(10,00)
