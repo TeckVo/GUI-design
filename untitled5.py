@@ -49,7 +49,7 @@ with col4:
          st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture1.png")
 with col5:
          st.subheader("Optimization framework")
-         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture3.png")
+         st.image("https://raw.githubusercontent.com/TeckVo/GUI-design/main/Figure_set/Picture5.png")
          
          
    
